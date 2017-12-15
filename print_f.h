@@ -45,7 +45,8 @@ typedef enum		e_specifier
 
 typedef struct		s_option
 {
-	enum e_length	length;
+	t_specifier		specifier;
+	t_length		length;
 	char 			*key;
 	int 			nb_space;
 	int				nb_zero;
