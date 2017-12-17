@@ -10,7 +10,11 @@ long get_var(t_pf *pf, va_list *ap)
 // fonction qui redirige les datas en fonction de l'enigme :)
 int send_data_good_solver(t_pf *pf)
 {
-	fill_number_str_signed(pf->data,pf);
+	if (pf->o.specifier == DECIMAL)
+		manage_decimal(pf);
+	if (pf->o.specifier == UNSIGNED)
+		manage_unsigned(pf);
+
 }
 
 long ft_printf(char *str, ...)

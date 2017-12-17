@@ -56,6 +56,7 @@ typedef struct		s_option
 	uint8_t			left:1;
 	uint8_t			plus:1;
 	uint8_t 		space:1;
+	uint8_t 		neg:1;
 
 }					t_option;
 
@@ -73,4 +74,7 @@ int manage_str(t_pf *pf);
 long ft_printf(char *str, ...);
 void pf_option(t_option *o);
 void set_op(t_option *o);
+void manage_decimal(t_pf *pf);
+void manage_unsigned(t_pf *pf);
+
 #endif

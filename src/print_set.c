@@ -29,4 +29,5 @@ void set_op(t_option *o)
 	o->plus = 0;
 	o->space = 0;
 	o->dot = 0;
+	o->neg = 0;
 }

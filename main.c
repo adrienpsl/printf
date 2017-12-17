@@ -7,7 +7,6 @@ int size_nb(long long int nb, unsigned long long u_nb, int base);
 int set_lenght(char c, t_option *option);
 void pf_option(t_option *o);
 int manage_f(char *s, t_option *o);
-int manage_decimal(t_option *o, ...);
 
 int main()
 {
@@ -19,21 +18,21 @@ int main()
 	//	printf("|%-10.5d|\n", -12);
 
 
-	char *b = "dsfsd";
-	long nb = b;
-	void *c = b;
+//	char *b = "dsfsd";
+//	long nb = b;
+//	void *c = b;
 
-	printf("[[%d]] \n", printf("[[%-0+.8d]]\n", +55));
+//	printf("[[%d]] \n", printf("[[%-0+.8d]]\n", +55));
 
 
 	//	printf("--%p--\n", (long)b);
 	//	printf("--%p--\n", (long)c);
 	//	printf("--%s--\n", (char*)c);
 
-	int i = 4544;
-	ft_printf("coucou %ld", LONG_MIN);
-	ft_printf("coucou %ld", -125);
-	printf("coucou %ld", LONG_MIN);
+	long i = 4294967295118;
+//	ft_printf("coucou %ld", LONG_MIN);
+	ft_printf("coucou %hhu", i);
+	printf("coucou %hhu", i);
 
 //	printf("\ncoucou %llu", ULONG_MAX);
 
