@@ -14,12 +14,7 @@
 # define PRINTF_H
 
 # include "../libft/includes/libft.h"
-
-typedef struct		s_w_flag
-{
-	void			*content;
-	char			*name;
-}					t_w_flag;
+#include <stdarg.h>
 
 typedef enum		e_length
 {
@@ -34,7 +29,7 @@ typedef enum		e_length
 
 typedef enum		e_specifier
 {
-	RIE,		//0
+	NOTHING,		//0
 	DECIMAL,	//1
 	OCTA,		//2
 	UNSIGNED,	//3
@@ -52,10 +47,11 @@ typedef struct		s_option
 {
 	t_specifier		specifier;
 	t_length		length;
-	char 			*key;
+	long 			data;
 	int 			nb_space;
 	int				nb_preci;
 	uint8_t			zero:1;
+	uint8_t			dot:1;
 	uint8_t 		diez:1;
 	uint8_t			left:1;
 	uint8_t			plus:1;
@@ -63,5 +59,6 @@ typedef struct		s_option
 
 }					t_option;
 
+int set_flag(char **str, t_option *option);
 
 #endif
