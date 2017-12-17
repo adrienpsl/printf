@@ -81,10 +81,21 @@ void manage_decimal(t_pf *pf);
 void manage_unsigned(t_pf *pf);
 void print_first_char(t_pf *pf);
 
+
+
+
 // printer
 void printer_right_dot(t_pf *pf);
 void printer_right_no_dot(t_pf *pf);
 void printer_left_dot(t_pf *pf);
 void printer_left_no_dot(t_pf *pf);
+
+// parseur
+void order_manage_numeric(t_pf *pf);
+
+
+//test
+void manage_maker(t_pf *pf);
+
 
 #endif

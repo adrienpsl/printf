@@ -24,12 +24,9 @@ void handle_dot(t_pf *pf)
 
 void handle_no_dot(t_pf *pf)
 {
+	pf->o.nb_space = pf->o.nb_space - pf->lenght_out;
 	if (pf->o.zero)
 		pf->o.nb_zero = (pf->o.nb_space - pf->lenght_out);
-	else
-	{
-		pf->o.nb_space = pf->o.nb_space - pf->lenght_out;
-	}
 }
 
 void order_manage_numeric(t_pf *pf)
@@ -40,6 +37,7 @@ void order_manage_numeric(t_pf *pf)
 
 	if (pf->o.neg || pf->o.plus || pf->o.space)
 		pf->o.first_char = 1;
+	pf->o.nb_space = pf->o.nb_space - pf->o.first_char;
 
 	// si dot == arrange la size || pas dot == nb_space - nb
 	if(pf->o.dot)
@@ -47,9 +45,7 @@ void order_manage_numeric(t_pf *pf)
 	else if (pf->o.left)
 		pf->o.zero = 0;
 	else
-	{
-
-	}
+		handle_no_dot(pf);
 
 
 }
