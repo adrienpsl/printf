@@ -30,4 +30,6 @@ void set_op(t_option *o)
 	o->space = 0;
 	o->dot = 0;
 	o->neg = 0;
+	o->first_char = 0;
+	o->nb_zero = 0;
 }

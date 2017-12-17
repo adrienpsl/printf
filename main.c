@@ -29,10 +29,12 @@ int main()
 	//	printf("--%p--\n", (long)c);
 	//	printf("--%s--\n", (char*)c);
 
-	long i = 4294967295118;
+	long i = 4;
 //	ft_printf("coucou %ld", LONG_MIN);
-	ft_printf("coucou %hhu", i);
-	printf("coucou %hhu", i);
+	ft_printf("coucou [[% +d]]", i);
+	printf("coucou [[%30 0d]]\n", i);
+	printf("coucou [[%s]]", "ok");
+
 
 //	printf("\ncoucou %llu", ULONG_MAX);
 

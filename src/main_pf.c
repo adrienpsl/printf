@@ -12,7 +12,7 @@ int send_data_good_solver(t_pf *pf)
 {
 	if (pf->o.specifier == DECIMAL)
 		manage_decimal(pf);
-	if (pf->o.specifier == UNSIGNED)
+	else if (pf->o.specifier == UNSIGNED)
 		manage_unsigned(pf);
 
 }
@@ -30,7 +30,7 @@ long ft_printf(char *str, ...)
 		ft_memset(pf.nb_s,0,30);
 		get_var(&pf, &ap);
 		send_data_good_solver(&pf);
-		printf("%s \n",pf.nb_s);
+		ft_putstr(pf.nb_s);
 		// print la data, recommencer
 	}
 }

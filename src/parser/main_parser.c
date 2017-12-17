@@ -10,23 +10,23 @@ void set_specifier(char c, t_option *option)
 {
 	if (check_char_into_str("Ddi", c))
 		option->specifier = DECIMAL;
-	if (c == 'O' || c == 'o')
+	else if (c == 'O' || c == 'o')
 		option->specifier = OCTA;
-	if (c == 'U' || c == 'u')
+	else if (c == 'U' || c == 'u')
 		option->specifier = UNSIGNED;
-	if (c == 'x')
+	else if (c == 'x')
 		option->specifier = hexa;
-	if (c == 'X')
+	else if (c == 'X')
 		option->specifier = HEXA;
-	if (c == 'c')
+	else if (c == 'c')
 		option->specifier = kart;
-	if (c == 'C')
+	else if (c == 'C')
 		option->specifier = CHAR;
-	if (c == 's')
+	else if (c == 's')
 		option->specifier = str;
-	if (c == 'S')
+	else if (c == 'S')
 		option->specifier = STR;
-	if (c == 'p')
+	else if (c == 'p')
 		option->specifier = PTR;
 }
 
@@ -82,5 +82,6 @@ int manage_str(t_pf *pf)
 			pf->retour++;
 		}
 	}
+	putchar('\n');
 	return (0);
 }

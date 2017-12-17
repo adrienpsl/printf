@@ -46,4 +46,9 @@ void manage_decimal(t_pf *pf)
 {
 	set_lenght_decimal(pf);
 	fill_number_str_signed(pf->data,pf);
+
+	pf->out = &pf->nb_s;
+	pf->lenght_out = ft_strlen(pf->out);
+	// il faut le check
+	pf->o.first_char = 1;
 }

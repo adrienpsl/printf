@@ -18,7 +18,7 @@ static int set_lenght_unsigned(t_pf *pf)
 		pf->data = (unsigned int)pf->data;
 }
 
-int fill_number_str_unsigned(unsigned long nb, t_pf *pf)
+static int fill_number_str_unsigned(unsigned long nb, t_pf *pf)
 {
 	int i;
 
@@ -36,4 +36,6 @@ void manage_unsigned(t_pf *pf)
 {
 	set_lenght_unsigned(pf);
 	fill_number_str_unsigned(pf->data,pf);
+	pf->out = &pf->nb_s;
+	pf->o.first_char = 1;
 }

@@ -50,6 +50,7 @@ typedef struct		s_option
 	t_length		length;
 	int 			nb_space;
 	int				nb_preci;
+	long			nb_zero;
 	uint8_t			zero:1;
 	uint8_t			dot:1;
 	uint8_t 		diez:1;
@@ -57,15 +58,17 @@ typedef struct		s_option
 	uint8_t			plus:1;
 	uint8_t 		space:1;
 	uint8_t 		neg:1;
-
+	uint8_t 		first_char:1;
 }					t_option;
 
 typedef struct		s_pf
 {
 	t_option		o;
 	char			nb_s[30];
+	char			*out;
 	long 			data;
 	long 			retour;
+	size_t			lenght_out;
 	char 			**s;
 }					t_pf;
 
@@ -76,5 +79,12 @@ void pf_option(t_option *o);
 void set_op(t_option *o);
 void manage_decimal(t_pf *pf);
 void manage_unsigned(t_pf *pf);
+void print_first_char(t_pf *pf);
+
+// printer
+void printer_right_dot(t_pf *pf);
+void printer_right_no_dot(t_pf *pf);
+void printer_left_dot(t_pf *pf);
+void printer_left_no_dot(t_pf *pf);
 
 #endif
