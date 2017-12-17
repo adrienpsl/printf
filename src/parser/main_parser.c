@@ -5,63 +5,70 @@
 // le retour je le gere pas
 // si mon nb est negatif ?
 
+// tte les fonctions doivent clean apres avoir get leur char  
 
-void set_specifier(char c, t_option *option)
+void set_specifier(char **s, t_option *option)
 {
-	if (check_char_into_str("Ddi", c))
+	if (check_char_into_str("Ddi", **s))
 		option->specifier = DECIMAL;
-	else if (c == 'O' || c == 'o')
+	else if (**s == 'O' || **s == 'o')
 		option->specifier = OCTA;
-	else if (c == 'U' || c == 'u')
+	else if (**s == 'U' || **s == 'u')
 		option->specifier = UNSIGNED;
-	else if (c == 'x')
+	else if (**s == 'x')
 		option->specifier = hexa;
-	else if (c == 'X')
+	else if (**s == 'X')
 		option->specifier = HEXA;
-	else if (c == 'c')
+	else if (**s == 'c')
 		option->specifier = kart;
-	else if (c == 'C')
+	else if (**s == 'C')
 		option->specifier = CHAR;
-	else if (c == 's')
+	else if (**s == 's')
 		option->specifier = str;
-	else if (c == 'S')
+	else if (**s == 'S')
 		option->specifier = STR;
-	else if (c == 'p')
+	else if (**s == 'p')
 		option->specifier = PTR;
+	else
+		return ;
+	(*s)++;
 }
 
-void get_length(char c, t_option *option)
+void get_length(char **s, t_option *option)
 {
-	if (c == 'j' || option->length == INTMAX)
+	if (**s == 'j' || option->length == INTMAX)
 		option->length = INTMAX;
 
-	else if (c == 'z' || option->length == SIZE_T)
+	else if (**s == 'z' || option->length == SIZE_T)
 		option->length = SIZE_T;
 
-	else if (c == 'l' && option->length == LONG)
+	else if (**s == 'l' && option->length == LONG)
 		option->length = LONG_LONG;
-	else if (c == 'l')
+	else if (**s == 'l')
 		option->length = LONG;
 
-	else if (c == 'h' && option->length == SHORT)
+	else if (**s == 'h' && option->length == SHORT)
 		option->length = H;
-	else if (c == 'h' && option->length == H)
+	else if (**s == 'h' && option->length == H)
 		option->length = SHORT;
-	else if (c == 'h')
+	else if (**s == 'h')
 		option->length = SHORT;
+	else
+		return ;
+	(*s)++;
 }
 
 int handle_pourcent(char **s, t_option *o)
 {
 	(*s)++;
-	set_specifier(**s, o);
+	set_specifier(s, o);
 	while (o->specifier == NOTHING && **s != '\0')
 	{
-		get_length(**s, o);
+		get_length(s, o);
 		set_flag(s, o);
-		set_specifier(**s, o);
-		if (**s)
-			(*s)++;
+		set_specifier(s, o);
+		//		if (**s && s == ' ')
+		//			(*s)++;
 	}
 }
 

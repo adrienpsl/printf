@@ -26,7 +26,7 @@ void manage_maker(t_pf *pf)
 		pf->o.nb_space--;
 	}
 	print_first_char(pf);
-	while (pf->o.nb_zero)
+	while (pf->o.nb_zero > 0)
 	{
 		ft_putchar('0');
 		pf->o.nb_zero--;

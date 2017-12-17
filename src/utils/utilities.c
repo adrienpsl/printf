@@ -26,7 +26,10 @@ void handle_no_dot(t_pf *pf)
 {
 	pf->o.nb_space = pf->o.nb_space - pf->lenght_out;
 	if (pf->o.zero)
-		pf->o.nb_zero = (pf->o.nb_space - pf->lenght_out);
+	{
+		pf->o.nb_zero = pf->o.nb_space;
+		pf->o.nb_space = 0;
+	}
 }
 
 void order_manage_numeric(t_pf *pf)

@@ -29,10 +29,10 @@ int main()
 	//	printf("--%p--\n", (long)c);
 	//	printf("--%s--\n", (char*)c);
 
-	long i = -4;
+	long i = 4;
 //	ft_printf("coucou %ld", LONG_MIN);
-	ft_printf("coucou [[%088 +d]]", i);
-	printf("coucou [[%30 d]]\n", i);
+	ft_printf("coucou [[%04.5 +d]]", i);
+	printf("coucou [[%04.5 +d]]\n", i);
 	printf("coucou [[%s]]", "ok");
 
 
