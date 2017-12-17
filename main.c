@@ -11,34 +11,38 @@ int manage_decimal(t_option *o, ...);
 
 int main()
 {
-//	printf("4567 |%-10]5d| plip\n", 12);
-//	printf("4567 |%10]5d| plip\n", 12);
-//	printf("|%10.5d|\n", -12);
-//	printf("|%10d|\n", -12);
-//	printf("|%010d|\n", -12);
-//	printf("|%-10.5d|\n", -12);
+	//	printf("4567 |%-10]5d| plip\n", 12);
+	//	printf("4567 |%10]5d| plip\n", 12);
+	//	printf("|%10.5d|\n", -12);
+	//	printf("|%10d|\n", -12);
+	//	printf("|%010d|\n", -12);
+	//	printf("|%-10.5d|\n", -12);
 
 
 	char *b = "dsfsd";
 	long nb = b;
 	void *c = b;
 
-	printf("[[ %d ]] \n", printf("-- %s8.d--\n",b));
+	printf("[[%d]] \n", printf("[[%-0+.8d]]\n", +55));
 
 
 	//	printf("--%p--\n", (long)b);
-//	printf("--%p--\n", (long)c);
-//	printf("--%s--\n", (char*)c);
+	//	printf("--%p--\n", (long)c);
+	//	printf("--%s--\n", (char*)c);
 
-	t_option a;
+	int i = 4544;
+	ft_printf("coucou %ld", LONG_MIN);
+	ft_printf("coucou %ld", -125);
+	printf("coucou %ld", LONG_MIN);
 
-	set_op(&a);
-
-	testt(&a,897,b);
+//	printf("\ncoucou %llu", ULONG_MAX);
 
 
-//	manage_f("%d.88 0 88 %",&a);
-//	pf_option(&a);
+	//	testt(&a,897,b);
+
+
+	//	manage_f("%d.88 0 88 %",&a);
+	//	pf_option(&a);
 
 	return 0;
 }

@@ -30,7 +30,7 @@ void set_specifier(char c, t_option *option)
 		option->specifier = PTR;
 }
 
-void set_length(char c, t_option *option)
+void get_length(char c, t_option *option)
 {
 	if (c == 'j' || option->length == INTMAX)
 		option->length = INTMAX;
@@ -57,7 +57,7 @@ int handle_pourcent(char **s, t_option *o)
 	set_specifier(**s, o);
 	while (o->specifier == NOTHING && **s != '\0')
 	{
-		set_length(**s, o);
+		get_length(**s, o);
 		set_flag(s, o);
 		set_specifier(**s, o);
 		if (**s)
@@ -65,13 +65,22 @@ int handle_pourcent(char **s, t_option *o)
 	}
 }
 
-int manage_str(char *s, t_option *o)
+int manage_str(t_pf *pf)
 {
-	while (*s)
+	set_op(&pf->o);
+	while (**pf->s)
 	{
-		if (*s == '%')
-			handle_pourcent(&s, o);
-		if (*s)
-			s++;
+		if (**pf->s == '%')
+		{
+			handle_pourcent(pf->s, &pf->o);
+			return (1);
+		}
+		if (**pf->s)
+		{
+			write(1, *pf->s, 1);
+			(*pf->s)++;
+			pf->retour++;
+		}
 	}
+	return (0);
 }

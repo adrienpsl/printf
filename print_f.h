@@ -15,6 +15,7 @@
 
 # include "../libft/includes/libft.h"
 #include <stdarg.h>
+# include <limits.h>
 
 typedef enum		e_length
 {
@@ -29,7 +30,7 @@ typedef enum		e_length
 
 typedef enum		e_specifier
 {
-	NOTHING,		//0
+	NOTHING,	//0
 	DECIMAL,	//1
 	OCTA,		//2
 	UNSIGNED,	//3
@@ -47,7 +48,6 @@ typedef struct		s_option
 {
 	t_specifier		specifier;
 	t_length		length;
-	long 			data;
 	int 			nb_space;
 	int				nb_preci;
 	uint8_t			zero:1;
@@ -59,6 +59,18 @@ typedef struct		s_option
 
 }					t_option;
 
-int set_flag(char **str, t_option *option);
+typedef struct		s_pf
+{
+	t_option		o;
+	char			nb_s[30];
+	long 			data;
+	long 			retour;
+	char 			**s;
+}					t_pf;
 
+int set_flag(char **str, t_option *option);
+int manage_str(t_pf *pf);
+long ft_printf(char *str, ...);
+void pf_option(t_option *o);
+void set_op(t_option *o);
 #endif
