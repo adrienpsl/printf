@@ -2,40 +2,26 @@
 
 void print_by_left(t_pf *pf)
 {
-
+	printer_first_char(pf);
+	printer_zero(pf);
+	printer_precision(pf);
+	printer_out(pf);
+	printer_space(pf);
 }
 
 void print_by_right(t_pf *pf)
 {
-	if(pf->o.dot)
-		printer_right_dot(pf);
-	else
-		printer_right_no_dot(pf);
+	printer_space(pf);
+	printer_first_char(pf);
+	printer_zero(pf);
+	printer_precision(pf);
+	printer_out(pf);
 }
 
 void manage_maker(t_pf *pf)
 {
-//	pf->lenght_out = ft_strlen(pf->out);
-//	if(pf->o.left)
-//		print_by_left(pf);
-//	else
-//		print_by_right(pf);
-	while (pf->o.nb_space > 0)
-	{
-		ft_putchar(' ');
-		pf->o.nb_space--;
-	}
-	print_first_char(pf);
-	while (pf->o.nb_zero > 0)
-	{
-		ft_putchar('0');
-		pf->o.nb_zero--;
-	}
-	while (pf->o.nb_preci > 0)
-	{
-		ft_putchar('0');
-		pf->o.nb_preci--;
-	}
-
-	ft_putstr(pf->out);
+	if (pf->o.left)
+		print_by_left(pf);
+	else
+		print_by_right(pf);
 }

@@ -2,10 +2,8 @@
 
 long get_var(t_pf *pf, va_list *ap)
 {
-	pf->data = va_arg(*ap,long);
+	pf->data = va_arg(*ap, long);
 }
-
-
 
 // fonction qui redirige les datas en fonction de l'enigme :)
 int send_data_good_solver(t_pf *pf)
@@ -14,7 +12,6 @@ int send_data_good_solver(t_pf *pf)
 		manage_decimal(pf);
 	else if (pf->o.specifier == UNSIGNED)
 		manage_unsigned(pf);
-
 }
 
 long ft_printf(char *str, ...)
@@ -27,7 +24,7 @@ long ft_printf(char *str, ...)
 	va_start(ap, str);
 	while (manage_str(&pf))
 	{
-		ft_memset(pf.nb_s,0,30);
+		ft_memset(pf.nb_s, 0, 30);
 		get_var(&pf, &ap);
 		send_data_good_solver(&pf);
 		// print la data, recommencer

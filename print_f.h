@@ -85,10 +85,11 @@ void print_first_char(t_pf *pf);
 
 
 // printer
-void printer_right_dot(t_pf *pf);
-void printer_right_no_dot(t_pf *pf);
-void printer_left_dot(t_pf *pf);
-void printer_left_no_dot(t_pf *pf);
+void printer_space(t_pf *pf);
+void printer_first_char(t_pf *pf);
+void printer_zero(t_pf *pf);
+void printer_precision(t_pf *pf);
+void printer_out(t_pf *pf);
 
 // parseur
 void order_manage_numeric(t_pf *pf);

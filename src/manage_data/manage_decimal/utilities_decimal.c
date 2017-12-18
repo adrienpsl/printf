@@ -1,16 +1,6 @@
-#include "../../print_f.h"
+#include "../../../print_f.h"
 
-void print_first_char(t_pf *pf)
-{
-	if(pf->o.neg)
-		ft_putchar('-');
-	else if(pf->o.plus)
-		ft_putchar('+');
-	else if(pf->o.space)
-		ft_putchar(' ');
-}
-
-void handle_dot(t_pf *pf)
+static void handle_dot(t_pf *pf)
 {
 	pf->o.zero = 0;
 
@@ -22,7 +12,7 @@ void handle_dot(t_pf *pf)
 		pf->o.nb_space = pf->o.nb_space - pf->lenght_out;
 }
 
-void handle_no_dot(t_pf *pf)
+static void handle_no_dot(t_pf *pf)
 {
 	pf->o.nb_space = pf->o.nb_space - pf->lenght_out;
 	if (pf->o.zero)

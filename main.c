@@ -31,8 +31,8 @@ int main()
 
 	long i = -4;
 //	ft_printf("coucou %ld", LONG_MIN);
-	ft_printf("coucou [[%08 .58 +d]]", i);
-	printf("coucou [[%08 .58 +d]]\n", i);
+	ft_printf("coucou [[%30- .25  ld]]", i);
+	printf("coucou [[%30- .25  ld]]\n", i);
 	printf("coucou [[%s]]", "ok");
 
 

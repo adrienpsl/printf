@@ -1,4 +1,4 @@
-#include "../../print_f.h"
+#include "../../../print_f.h"
 
 static int set_lenght_decimal(t_pf *pf)
 {
@@ -48,6 +48,4 @@ void manage_decimal(t_pf *pf)
 	fill_number_str_signed(pf->data,pf);
 	order_manage_numeric(pf);
 	manage_maker(pf);
-//	pf_option(&pf->o);
-
 }

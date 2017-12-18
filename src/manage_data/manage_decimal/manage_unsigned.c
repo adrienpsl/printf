@@ -1,4 +1,4 @@
-#include "../../print_f.h"
+#include "../../../print_f.h"
 
 static int set_lenght_unsigned(t_pf *pf)
 {
@@ -36,6 +36,6 @@ void manage_unsigned(t_pf *pf)
 {
 	set_lenght_unsigned(pf);
 	fill_number_str_unsigned(pf->data,pf);
-	pf->out = &pf->nb_s;
-	pf->o.first_char = 1;
+	order_manage_numeric(pf);
+	manage_maker(pf);
 }
