@@ -29,9 +29,9 @@ int main()
 	//	printf("--%p--\n", (long)c);
 	//	printf("--%s--\n", (char*)c);
 
-	unsigned int i = 44654;
+	unsigned int i = 1234;
 //	ft_printf("coucou %ld", LONG_MIN);
-	ft_printf("coucou [[% .88 n]]", i);
+	ft_printf("coucou [[% .88 c]]", i);
 	printf("coucou [[%88 c]]\n", i);
 //	printf("coucou [[%s]]", "ok");
 

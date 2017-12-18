@@ -37,9 +37,9 @@ void printer_precision(t_pf *pf)
 
 void printer_out(t_pf *pf)
 {
-	if (pf->o.c_w != 0)
-		putstr_and_count(pf->out, pf);
-	else
+//	if (pf->o.c_w != 0)
+//		putstr_and_count(pf->out, pf);
+//	else
 		put_uni_and_count(pf->data,pf);
 
 }
