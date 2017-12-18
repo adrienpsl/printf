@@ -13,6 +13,8 @@ void printer_first_char(t_pf *pf)
 {
 	if (pf->o.specifier == DECIMAL)
 		print_first_char(pf);
+	if(pf->o.specifier == HEXA || pf->o.specifier == hexa)
+		print_first_char(pf);
 }
 
 void printer_zero(t_pf *pf)

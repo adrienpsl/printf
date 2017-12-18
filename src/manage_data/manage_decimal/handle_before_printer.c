@@ -39,6 +39,4 @@ void order_manage_numeric(t_pf *pf)
 		pf->o.zero = 0;
 	else
 		handle_no_dot(pf);
-
-
 }

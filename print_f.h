@@ -77,12 +77,20 @@ int manage_str(t_pf *pf);
 long ft_printf(char *str, ...);
 void pf_option(t_option *o);
 void set_op(t_option *o);
+
+// manage separeters
 void manage_decimal(t_pf *pf);
 void manage_unsigned(t_pf *pf);
+void manage_hexa(t_pf *pf);
+
+
+// utils numeric
+void order_manage_numeric(t_pf *pf);
+int set_lenght_unsigned(t_pf *pf);
+void convert_base_fill_unsigned(t_pf *pf, char *base);
+
+// printer utils
 void print_first_char(t_pf *pf);
-
-
-
 
 // printer
 void printer_space(t_pf *pf);
