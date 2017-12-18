@@ -2,10 +2,11 @@
 
 void manage_char(t_pf *pf)
 {
-	pf->data = (unsigned char)pf->data;
-	if (pf->o.length == LONG)
+	if (pf->o.length != LONG)
+		pf->data = (unsigned char) pf->data;
+	else
 	{
-		pf->o.c_w[0] = (wchar_t)pf->data;
+		pf->o.c_w[0] = (wchar_t) pf->data;
 	}
 	order_manage_numeric(pf);
 	manage_maker(pf);

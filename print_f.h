@@ -107,6 +107,7 @@ void order_manage_numeric(t_pf *pf);
 //utils main
 void put_and_count(char c, t_pf *pf);
 void putstr_and_count(char *s, t_pf *pf);
+void put_uni_and_count(wchar_t c, t_pf *pf);
 
 //test
 void manage_maker(t_pf *pf);
