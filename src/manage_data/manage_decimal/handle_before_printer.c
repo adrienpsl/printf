@@ -33,10 +33,10 @@ void order_manage_numeric(t_pf *pf)
 	pf->o.nb_space = pf->o.nb_space - pf->o.first_char;
 
 	// si dot == arrange la size || pas dot == nb_space - nb
+	if (pf->o.left)
+		pf->o.zero = 0;
 	if(pf->o.dot)
 		handle_dot(pf);
-	else if (pf->o.left)
-		pf->o.zero = 0;
 	else
 		handle_no_dot(pf);
 }
