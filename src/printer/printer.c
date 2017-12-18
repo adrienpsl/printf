@@ -4,7 +4,7 @@ void printer_space(t_pf *pf)
 {
 	while (pf->o.nb_space > 0)
 	{
-		ft_putchar(' ');
+		put_and_count(' ',  pf);
 		pf->o.nb_space--;
 	}
 }
@@ -21,7 +21,7 @@ void printer_zero(t_pf *pf)
 {
 	while (pf->o.nb_zero > 0)
 	{
-		ft_putchar('0');
+		put_and_count('0', pf);
 		pf->o.nb_zero--;
 	}
 }
@@ -30,12 +30,14 @@ void printer_precision(t_pf *pf)
 {
 	while (pf->o.nb_preci > 0)
 	{
-		ft_putchar('0');
+		put_and_count('0',  pf);
 		pf->o.nb_preci--;
 	}
 }
 
 void printer_out(t_pf *pf)
 {
-	ft_putstr(pf->out);
+	if (pf->o.c_w != 0)
+		
+		putstr_and_count(pf->out, pf);
 }

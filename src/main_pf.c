@@ -14,6 +14,10 @@ int send_data_good_solver(t_pf *pf)
 		manage_unsigned(pf);
 	else if (pf->o.specifier == HEXA || pf->o.specifier == hexa)
 		manage_hexa(pf);
+	else if (pf->o.specifier == OCTA)
+		manage_octal(pf);
+	else if (pf->o.specifier == kart)
+		manage_char(pf);
 }
 
 long ft_printf(char *str, ...)
