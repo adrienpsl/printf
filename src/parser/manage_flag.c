@@ -1,6 +1,6 @@
 #include "../../print_f.h"
 
-static int get_precision_nb(char **s, t_option *option)
+static void get_precision_nb(char **s, t_option *option)
 {
 	int i;
 
@@ -14,7 +14,7 @@ static int get_precision_nb(char **s, t_option *option)
 	*s += i;
 }
 
-static int get_space_nb(char **s, t_option *option)
+static void get_space_nb(char **s, t_option *option)
 {
 	option->nb_space = ft_atoi(*s);
 	while (ft_isdigit(**s))
@@ -23,20 +23,23 @@ static int get_space_nb(char **s, t_option *option)
 	}
 }
 
-int set_flag(char **str, t_option *option)
+void set_flag(char **str, t_option *option)
 {
 	if (**str == '0')
 		option->zero = 1;
-	if (**str == '.')
-		get_precision_nb(str, option);
-	if (ft_isdigit(**str))
-		get_space_nb(str, option);
-	if (**str == '#')
+	else if (**str == '.')
+		return get_precision_nb(str, option);
+	else if (ft_isdigit(**str))
+		return get_space_nb(str, option);
+	else if (**str == '#')
 		option->diez = 1;
-	if (**str == '+')
+	else if (**str == '+')
 		option->plus = 1;
-	if (**str == '-')
+	else if (**str == '-')
 		option->left = 1;
-	if (**str == ' ')
+	else if (**str == ' ')
 		option->space = 1;
+	else
+		return ;
+	(*str)++;
 }

@@ -72,7 +72,7 @@ typedef struct		s_pf
 	char 			**s;
 }					t_pf;
 
-int set_flag(char **str, t_option *option);
+void set_flag(char **str, t_option *option);
 int manage_str(t_pf *pf);
 long ft_printf(char *str, ...);
 void pf_option(t_option *o);

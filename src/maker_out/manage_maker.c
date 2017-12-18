@@ -20,7 +20,7 @@ void manage_maker(t_pf *pf)
 //		print_by_left(pf);
 //	else
 //		print_by_right(pf);
-	while (pf->o.nb_space)
+	while (pf->o.nb_space > 0)
 	{
 		ft_putchar(' ');
 		pf->o.nb_space--;
@@ -30,6 +30,11 @@ void manage_maker(t_pf *pf)
 	{
 		ft_putchar('0');
 		pf->o.nb_zero--;
+	}
+	while (pf->o.nb_preci > 0)
+	{
+		ft_putchar('0');
+		pf->o.nb_preci--;
 	}
 
 	ft_putstr(pf->out);
