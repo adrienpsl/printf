@@ -31,7 +31,7 @@ int main()
 
 	unsigned int i = 1234;
 //	ft_printf("coucou %ld", LONG_MIN);
-	ft_printf("coucou [[% .88 x]]", i);
+	ft_printf("coucou [[% .88 d]]", i);
 	printf("coucou [[%88 x]]\n", i);
 //	printf("coucou [[%s]]", "ok");
 
