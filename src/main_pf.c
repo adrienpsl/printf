@@ -31,7 +31,7 @@ long ft_printf(char *str, ...)
 	while (manage_str(&pf))
 	{
 		set_pf(&pf);
-		ft_memset(pf.nb_s, 0, 30);
+		ft_memset(pf.nb_s, 0, sizeof(wchar_t) * 40);
 		get_var(&pf, &ap);
 		send_data_good_solver(&pf);
 		// print la data, recommencer

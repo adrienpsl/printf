@@ -1,20 +1,19 @@
 #include "../../print_f.h"
 
-void putstr_and_count(char *s, t_pf *pf)
-{
-	while (*s)
-	{
-		put_and_count(*s, pf);
-		s++;
-	}
-}
-
-void put_and_count(char c, t_pf *pf)
-{
-	ft_putchar(c);
-	pf->retour++;
-}
-
+//void putstr_and_count(char *s, t_pf *pf)
+//{
+//	while (*s)
+//	{
+//		put_and_count(*s, pf);
+//		s++;
+//	}
+//}
+//
+//void put_and_count(char c, t_pf *pf)
+//{
+//	ft_putchar(c);
+//	pf->retour++;
+//}
 
 void put_uni_and_count(wchar_t c, t_pf *pf)
 {
@@ -30,11 +29,12 @@ void put_uni_and_count(wchar_t c, t_pf *pf)
 	ft_put_uni(c);
 }
 
-void     put_uni_count_str(wchar_t *s, t_pf *pf)
+void put_uni_count_str(wchar_t *s, t_pf *pf)
 {
-    while (*s != NULL)
-    {
-        put_uni_and_count(*s, pf);
-		s++;
-    }
+	if (s)
+		while (*s != 0)
+		{
+			put_uni_and_count(*s, pf);
+			s++;
+		}
 }

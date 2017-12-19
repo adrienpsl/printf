@@ -50,9 +50,6 @@ typedef struct s_option
 	int nb_space;
 	int nb_preci;
 	long nb_zero;
-	wchar_t *s_w;
-	wchar_t c_w[2];
-	uint8_t uni:1;
 	uint8_t zero:1;
 	uint8_t dot:1;
 	uint8_t diez:1;
@@ -66,8 +63,8 @@ typedef struct s_option
 typedef struct s_pf
 {
 	t_option o;
-	char nb_s[30];
-	char *out;
+	wchar_t nb_s[40];
+	wchar_t *out;
 	long data;
 	long retour;
 	size_t lenght_out;
@@ -106,8 +103,8 @@ void printer_out(t_pf *pf);
 void order_manage_numeric(t_pf *pf);
 
 //utils main
-void put_and_count(char c, t_pf *pf);
-void putstr_and_count(char *s, t_pf *pf);
+//void put_and_count(char c, t_pf *pf);
+//void putstr_and_count(char *s, t_pf *pf);
 void put_uni_and_count(wchar_t c, t_pf *pf);
 void put_uni_count_str(wchar_t *s, t_pf *pf);
 
