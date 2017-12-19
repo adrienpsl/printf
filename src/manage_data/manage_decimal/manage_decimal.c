@@ -22,6 +22,8 @@ static int fill_number_str_signed(long nb, t_pf *pf)
 	int i;
 
 	i = 0;
+	if (pf->data == 0)
+		pf->nb_s[0] = '0';
 	if (nb == LONG_MIN)
 	{
 		pf->nb_s[i] = (LONG_MIN % 10) * -1 + '0';

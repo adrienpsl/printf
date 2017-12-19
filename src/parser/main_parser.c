@@ -67,8 +67,6 @@ int handle_pourcent(char **s, t_option *o)
 		get_length(s, o);
 		set_flag(s, o);
 		set_specifier(s, o);
-		//		if (**s && s == ' ')
-		//			(*s)++;
 	}
 }
 

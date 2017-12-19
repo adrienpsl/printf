@@ -24,6 +24,8 @@ void convert_base_fill_unsigned(t_pf *pf, char *base)
 	int i;
 
 	i = 0;
+	if (pf->data == 0)
+		pf->nb_s[0] = '0';
 	length_b = ft_strlen(base);
 	while (pf->data)
 	{

@@ -52,6 +52,7 @@ typedef struct s_option
 	long nb_zero;
 	wchar_t *s_w;
 	wchar_t c_w[2];
+	uint8_t uni:1;
 	uint8_t zero:1;
 	uint8_t dot:1;
 	uint8_t diez:1;
@@ -108,6 +109,10 @@ void order_manage_numeric(t_pf *pf);
 void put_and_count(char c, t_pf *pf);
 void putstr_and_count(char *s, t_pf *pf);
 void put_uni_and_count(wchar_t c, t_pf *pf);
+void put_uni_count_str(wchar_t *s, t_pf *pf);
+
+// seter
+void set_pf(t_pf *pf);
 
 //test
 void manage_maker(t_pf *pf);

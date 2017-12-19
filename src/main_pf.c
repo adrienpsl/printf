@@ -30,6 +30,7 @@ long ft_printf(char *str, ...)
 	va_start(ap, str);
 	while (manage_str(&pf))
 	{
+		set_pf(&pf);
 		ft_memset(pf.nb_s, 0, 30);
 		get_var(&pf, &ap);
 		send_data_good_solver(&pf);

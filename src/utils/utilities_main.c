@@ -29,3 +29,12 @@ void put_uni_and_count(wchar_t c, t_pf *pf)
 		pf->retour += 4;
 	ft_put_uni(c);
 }
+
+void     put_uni_count_str(wchar_t *s, t_pf *pf)
+{
+    while (*s != NULL)
+    {
+        put_uni_and_count(*s, pf);
+		s++;
+    }
+}

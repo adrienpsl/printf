@@ -17,6 +17,15 @@ void pf_option(t_option *o)
 	printf("lenght  : %d \n", o->length);
 }
 
+void set_pf(t_pf *pf)
+{
+	pf->data = 0;
+	pf->lenght_out = 0;
+	pf->nb_s[0] = 0;
+	pf->out = NULL;
+}
+
+
 void set_op(t_option *o)
 {
 	o->specifier = 0;
@@ -35,4 +44,5 @@ void set_op(t_option *o)
 	o->s_w = NULL;
 	o->c_w[0] = 0;
 	o->c_w[1] = 0;
+	o->uni = 0;
 }
