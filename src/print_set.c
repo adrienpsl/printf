@@ -32,7 +32,6 @@ void set_op(t_option *o)
 	o->neg = 0;
 	o->first_char = 0;
 	o->nb_zero = 0;
-	o->s_w = NULL;
-	o->c_w[0] = 0;
-	o->c_w[1] = 0;
+	o->uni = 0;
+	o->nb_dot_str = 0;
 }

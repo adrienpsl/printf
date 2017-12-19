@@ -9,7 +9,7 @@ void manage_octal(t_pf *pf)
 	convert_base_fill_unsigned(pf, s_octal);
 	pf->o.plus = 0;
 	pf->o.space = 0;
-	if(pf->o.diez);
+	if (pf->o.diez == 1)
 		if(!pf->o.nb_preci)
 		{
 			pf->o.nb_preci = 1;

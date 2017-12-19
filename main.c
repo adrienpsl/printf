@@ -2,6 +2,7 @@
 #include "print_f.h"
 #include <stdint.h>
 #include <limits.h>
+#include <locale.h>
 
 int size_nb(long long int nb, unsigned long long u_nb, int base);
 int set_lenght(char c, t_option *option);
@@ -10,33 +11,30 @@ int manage_f(char *s, t_option *o);
 
 int main()
 {
-	//	printf("4567 |%-10]5d| plip\n", 12);
-	//	printf("4567 |%10]5d| plip\n", 12);
-	//	printf("|%10.5d|\n", -12);
-	//	printf("|%10d|\n", -12);
-	//	printf("|%010d|\n", -12);
-	//	printf("|%-10.5d|\n", -12);
 
 
-//	char *b = "dsfsd";
-//	long nb = b;
-//	void *c = b;
+	int i = 'a';
+	wchar_t s[3] = {0x1234, 0x1234};
+//	int i = 98;
+	printf("%s \n", setlocale(LC_ALL, ""));
+////	ft_printf("coucou %ld", LONG_MIN);
+	printf("%d \n",
+		   ft_printf("[[%10-.3S %10-.3S]]",s,s)
+	);
+//	printf("%d \n",
+//		   printf("coucou [[%4-.C]]", 'd')
+//	);
+//	printf("%d \n",
+//		   printf("[[%S]]", s)
+//	);
+//	printf("%d \n",
+//		   printf("[[% -s]]", "1234")
+//	);
+//	printf("%d \n",
+//		   printf("[[%2-S]]", s)
+//	);
 
-//	printf("[[%d]] \n", printf("[[%-0+.8d]]\n", +55));
-
-
-	//	printf("--%p--\n", (long)b);
-	//	printf("--%p--\n", (long)c);
-	//	printf("--%s--\n", (char*)c);
-
-	unsigned int i = 1234;
-//	ft_printf("coucou %ld", LONG_MIN);
-	ft_printf("coucou [[% .88 c]]", i);
-	printf("coucou [[%88 c]]\n", i);
-//	printf("coucou [[%s]]", "ok");
-
-
-//	printf("\ncoucou %llu", ULONG_MAX);
+		printf("%d \n",printf("\n [[%% +4ll]]",22 ));
 
 
 	//	testt(&a,897,b);
@@ -48,4 +46,3 @@ int main()
 	return 0;
 }
 
-// autant d'espace que je veux avant

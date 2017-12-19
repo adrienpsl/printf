@@ -6,10 +6,14 @@ static void handle_dot(t_pf *pf)
 
 	if (pf->o.nb_preci >= pf->lenght_out)
 		pf->o.nb_preci = pf->o.nb_preci - pf->lenght_out;
+	else
+		pf->o.nb_preci = 0;
 	if (pf->o.nb_preci)
 		pf->o.nb_space = pf->o.nb_space - pf->o.nb_preci;
 	if (pf->o.nb_space)
+	{
 		pf->o.nb_space = pf->o.nb_space - pf->lenght_out;
+	}
 }
 
 static void handle_no_dot(t_pf *pf)

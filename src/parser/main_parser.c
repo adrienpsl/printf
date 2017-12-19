@@ -71,6 +71,9 @@ int handle_pourcent(char **s, t_option *o)
 		//			(*s)++;
 	}
 }
+//coucou [[                                       a]]51
+//coucou [[                                     ሴ]]51
+
 
 int manage_str(t_pf *pf)
 {

@@ -16,8 +16,14 @@ int send_data_good_solver(t_pf *pf)
 		manage_hexa(pf);
 	else if (pf->o.specifier == OCTA)
 		manage_octal(pf);
+	else if (pf->o.specifier == CHAR)
+		 manage_CHAR(pf);
 	else if (pf->o.specifier == kart)
 		manage_char(pf);
+	else if (pf->o.specifier == STR)
+		manage_STR(pf);
+	else if (pf->o.specifier == str)
+		manage_strr(pf);
 }
 
 long ft_printf(char *str, ...)
@@ -27,6 +33,11 @@ long ft_printf(char *str, ...)
 
 	pf.s = &str;
 	pf.retour = 0;
+
+	pf.s_w = NULL;
+	pf.c_w[0] = 0;
+	pf.c_w[1] = 0;
+
 	va_start(ap, str);
 	while (manage_str(&pf))
 	{
@@ -35,4 +46,5 @@ long ft_printf(char *str, ...)
 		send_data_good_solver(&pf);
 		// print la data, recommencer
 	}
+	return pf.retour;
 }
