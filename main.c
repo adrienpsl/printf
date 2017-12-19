@@ -34,7 +34,7 @@ int main()
 //		   printf("[[%2-S]]", s)
 //	);
 
-		printf("%d \n",printf("\n [[%% +4ll]]",22 ));
+		printf("%d \n",printf("\n [[% +4lld]]",2222 ));
 
 
 	//	testt(&a,897,b);
