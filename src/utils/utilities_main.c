@@ -10,7 +10,9 @@ void putstr_and_count(char *s, t_pf *pf)
 {
 	while (*s)
 	{
-		put_and_count(*s, pf);
+		put_and_count(*s, pf);fgdfgdefgr
+		adfgsdfgadfg
+		adesfadfs
 		s++;
 	}
 }

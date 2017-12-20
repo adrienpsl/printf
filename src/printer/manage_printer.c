@@ -3,6 +3,7 @@
 void print_by_left(t_pf *pf)
 {
 	printer_first_char(pf);
+
 	printer_zero(pf);
 	printer_precision(pf);
 	printer_out(pf);

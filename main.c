@@ -17,6 +17,7 @@ int main()
 	//	printf("|%010d|\n", -12);
 	//	printf("|%-10.5d|\n", -12);
 
+<<<<<<< Updated upstream
 
 //	char *b = "dsfsd";
 //	long nb = b;
@@ -37,6 +38,30 @@ int main()
 
 
 //	printf("\ncoucou %llu", ULONG_MAX);
+=======
+	int i = 'a';
+	wchar_t s[3] = { 0x1234, 0x1234 };
+	//	int i = 98;
+	printf("%s \n", setlocale(LC_ALL, ""));
+	////	ft_printf("coucou %ld", LONG_MIN);
+	printf("%d \n  ",
+		   ft_printf("[[%10-.3S %10-.3S]]", s, s)
+	);
+	//	printf("%d \n",
+	//		   printf("coucou [[%4-.C]]", 'd')
+	//	);
+	//	printf("%d \n",
+	//		   printf("[[%S]]", s)
+	//	);
+	//	printf("%d \n",
+	//		   printf("[[% -s]]", "1234")
+	//	);
+	//	printf("%d \n",
+	//		   printf("[[%2-S]]", s)
+	//	);
+
+	printf("%d \n", printf("\n [[% +4lld]]", 2222));
+>>>>>>> Stashed changes
 
 
 	//	testt(&a,897,b);
