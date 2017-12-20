@@ -26,25 +26,25 @@ int send_data_good_solver(t_pf *pf)
 		manage_strr(pf);
 }
 
-long ft_printf(char *str, ...)
-{
-	va_list ap;
-	t_pf pf;
-
-	pf.s = &str;
-	pf.retour = 0;
-
-	pf.s_w = NULL;
-	pf.c_w[0] = 0;
-	pf.c_w[1] = 0;
-
-	va_start(ap, str);
-	while (manage_str(&pf))
-	{
-		ft_memset(pf.nb_s, 0, 30);
-		get_var(&pf, &ap);
-		send_data_good_solver(&pf);
-		// print la data, recommencer
-	}
-	return pf.retour;
-}
+//long ft_printf(char *str, ...)
+//{
+//	va_list ap;
+//	t_pf pf;
+//
+//	pf.s = &str;
+//	pf.retour = 0;
+//
+//	pf.s_w = NULL;
+//	pf.c_w[0] = 0;
+//	pf.c_w[1] = 0;
+//
+//	va_start(ap, str);
+//	while (manage_str(&pf))
+//	{
+//		ft_memset(pf.nb_s, 0, 30);
+//		get_var(&pf, &ap);
+//		send_data_good_solver(&pf);
+//		// print la data, recommencer
+//	}
+//	return pf.retour;
+//}

@@ -7,7 +7,21 @@ set(CMAKE_C_COMPILER "/usr/bin/gcc")
 #set ( CMAKE_C_FLAGS "-Wall -Wextra -Werror ")
 
 add_executable(printf
-        maintest.c main.c src/parser/main_parser.c print_f.h src/print_set.c src/parser/manage_flag.c src/main_pf.c src/manage_data/manage_decimal/manage_decimal.c src/manage_data/manage_decimal/utils_decimals/utilities_decimal.c src/manage_data/manage_decimal/utils_decimals/manage_unsigned.c src/printer/manage_printer.c src/printer/printer.c src/printer/utilities_printer.c src/manage_data/manage_decimal/manage_hexa.c src/manage_data/manage_decimal/handle_before_printer.c src/manage_data/manage_decimal/manage_octal.c src/utils/utilities_main.c src/manage_data/manage_text/manage_char.c
+        #        maintest.c main.c src/parser/main_parser.c print_f.h src/print_set.c src/parser/manage_flag.c src/main_pf.c src/manage_data/manage_decimal/manage_decimal.c src/manage_data/manage_decimal/utils_decimals/utilities_decimal.c src/manage_data/manage_decimal/utils_decimals/manage_unsigned.c src/printer/manage_printer.c src/printer/printer.c src/printer/utilities_printer.c src/manage_data/manage_decimal/manage_hexa.c src/manage_data/manage_decimal/handle_before_printer.c src/manage_data/manage_decimal/manage_octal.c src/utils/utilities_main.c src/manage_data/manage_text/manage_char.c
 
-        src2/nb/integer/signed/manage_integer_signed.c)
+
+        #       second attent
+        src2/manage_data/nb/integer/head_integer_signed.c
+
+        #       parseur
+        src2/manage_parseur/head_parseur.c
+
+        #        buffer
+        src2/main_pfff.c src2/pf_2.h src2/manage_buffer/head_buffer.c
+
+
+        #        main
+        main.c
+
+        )
 target_link_libraries(printf ${CMAKE_SOURCE_DIR}/libft/libft.a)
