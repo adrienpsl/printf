@@ -13,9 +13,10 @@ int main()
 
 	t_buff b;
 
-	ft_set_buff(&b);
-	printf("%d \n",ft_fill_buff("hhh",&b));
-	ft_print_buff(&b);
+//	ft_set_buff(&b);
+//	printf("%d \n",ft_fill_buff("hhh",&b));
+//	ft_print_buff(&b);
+	printf("-%1s- \n", "123456");
 
 	return 0;
 }

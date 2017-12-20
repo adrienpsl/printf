@@ -5,15 +5,21 @@
 #ifndef PRINTF_PF_2_H
 #define PRINTF_PF_2_H
 
+
 # include "../libft/includes/libft.h"
+
 #include <stdarg.h>
 # include <limits.h>
+
+#define TRUE 1
+#define END 0
+#define FALSE 0
+
 
 typedef struct s_buff
 {
 	char	data[BUFF_SIZE + 1];
 	size_t	remain_space;
-	size_t	posision;
 } t_buff;
 
 typedef enum e_length
@@ -27,7 +33,7 @@ typedef enum e_length
 	SIZE_T
 } t_length;
 
-typedef enum e_specifier
+/*typedef enum e_specifier
 {
 	NOTHING,    //0
 	DECIMAL,    //1
@@ -40,7 +46,8 @@ typedef enum e_specifier
 	STR,        //7
 	str,        //8
 	PTR,        //9
-} t_specifier;
+	PERCENT
+} t_specifier;*/
 
 typedef struct s_int
 {
@@ -52,7 +59,7 @@ typedef struct s_op
 {
 	long nb_dot;
 	long nb_space;
-	t_length length;
+	char length;
 	uint8_t zero:1;
 	uint8_t dot:1;
 	uint8_t diez:1;
@@ -64,9 +71,10 @@ typedef struct s_op
 
 typedef struct s_pf
 {
+	t_buff buff;
 	t_op op;
 	t_int pf_int;
-	t_specifier specifier;
+	char specifier;
 	long data;
 	long retour;
 	char *out;
@@ -80,6 +88,7 @@ typedef struct s_pf
 int ft_print_buff(t_buff *buff);
 int ft_fill_buff(char *str, t_buff *buff);
 void ft_set_buff(t_buff *buff);
+int buff_set_or_print(char *for_print,t_pf *pf);
 
 /*
 **	head printf
@@ -90,7 +99,11 @@ int fill_buff(char *str, t_buff *buff);
 /*
 **  parseur
 */
-char lead_parseur(t_pf *pf);
+char printf_parseur(t_pf *pf);
+long get_star_nxt_argv(t_pf *pf);
+
+int str_manage_percent(t_pf *pf);
+int str_set_flag(char **str, t_pf *pf);
 
 void set_op_zero(t_op *o);
 

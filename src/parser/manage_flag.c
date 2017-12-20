@@ -23,7 +23,7 @@ static void get_space_nb(char **s, t_option *option)
 	}
 }
 
-void set_flag(char **str, t_option *option)
+void str_set_flag(char **str, t_option *option)
 {
 	if (**str == '0')
 		option->zero = 1;

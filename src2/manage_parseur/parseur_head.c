@@ -3,23 +3,24 @@
 
 // tant que 0 continue
 
-//str_launch_get_option(pf)
-
-static int str_forward_into_str(t_pf *pf)
-{
-}
-
 static int parseur_manage_str(t_pf *pf)
 {
+	char tmp[2];
+
+	tmp[0] = '\0';
 	while (**pf->s)
 	{
 		if (**pf->s == '%')
 		{
-//			if (str_manage_percent)
-				return (1);
+			if (str_manage_percent(pf) == TRUE)
+				return (TRUE);
 		}
-		else{}
-			// put into buffer
+		else if (**pf->s != END)
+		{
+			tmp[1] = **pf->s;
+			buff_set_or_print(&tmp, pf);
+			(*pf->s)++;
+		}
 	}
 	return (1);
 }

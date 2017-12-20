@@ -14,7 +14,7 @@ add_executable(printf
         src2/manage_data/nb/integer/head_integer_signed.c
 
         #       parseur
-        src2/manage_parseur/head_parseur.c
+        src2/manage_parseur/parseur_head.c
 
         #        buffer
         src2/main_pfff.c src2/pf_2.h src2/manage_buffer/head_buffer.c
@@ -23,5 +23,5 @@ add_executable(printf
         #        main
         main.c
 
-        )
+        src2/manage_parseur/parseur_manage_percent.c src2/manage_parseur/parseur_utils.c src2/manage_parseur/parseur_percent_manage_flag.c)
 target_link_libraries(printf ${CMAKE_SOURCE_DIR}/libft/libft.a)

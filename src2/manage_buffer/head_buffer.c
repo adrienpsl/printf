@@ -1,6 +1,18 @@
 #include "../pf_2.h"
 
 /*
+**	manage buff for this project
+*/
+int buff_set_or_print(char *for_print,t_pf *pf)
+{
+	if (ft_fill_buff(for_print,&pf->s) == 0)
+	{
+		ft_print_buff(&pf->buff);
+		ft_fill_buff(for_print,&pf->s);
+	}
+}
+
+/*
 **	print and set buff
 */
 int ft_print_buff(t_buff *buff)
