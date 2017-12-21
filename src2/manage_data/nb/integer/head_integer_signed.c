@@ -52,6 +52,5 @@ int manage_decimal(t_pf *pf)
 	fill_number_str_signed(pf->data, pf);
 
 	manage_nb_before_printer(pf);
-	buff_set_or_print(pf->pf_int.nb_s,pf);
-	//	manage_maker(pf);
+	manage_printer(pf);
 }

@@ -1,6 +1,23 @@
 #include "../pf_2.h"
 
 /*
+**  put char into buffer
+*/
+int buff_set_or_print_char(char for_print, t_pf *pf)
+{
+	char s[2];
+
+	s[1] = 0;
+	s[0] = for_print;
+	if (ft_fill_buff(s, &pf->buff) == 0)
+	{
+		ft_print_buff(&pf->buff);
+		ft_fill_buff(for_print, &pf->buff);
+	}
+}
+
+
+/*
 **	manage buff for this project
 */
 int buff_set_or_print(char *for_print, t_pf *pf)

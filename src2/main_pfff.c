@@ -14,6 +14,8 @@ int send_to_good_manager(t_pf *pf)
 {
 	if (check_char_into_str("Ddi",pf->specifier))
 		return manage_decimal(pf);
+	if (check_char_into_str("Uu",pf->specifier))
+		return manage_unsigned(pf);
 
 }
 

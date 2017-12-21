@@ -5,9 +5,6 @@
 
 static int parseur_manage_str(t_pf *pf)
 {
-	char tmp[2];
-
-	tmp[1] = END;
 	while (**pf->s != END)
 	{
 		if (**pf->s == '%')
@@ -17,9 +14,8 @@ static int parseur_manage_str(t_pf *pf)
 		}
 		else if (**pf->s != END)
 		{
-			tmp[0] = **pf->s;
+			buff_set_or_print_char(**pf->s,pf);
 			(*pf->s)++;
-			buff_set_or_print(&tmp, pf);
 		}
 	}
 	return (0);

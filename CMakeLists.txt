@@ -23,5 +23,5 @@ add_executable(printf
         #        main
         main.c
 
-        src2/manage_parseur/parseur_manage_percent.c src2/manage_parseur/parseur_utils.c src2/manage_parseur/parseur_percent_manage_flag.c maintest_1.0.c src2/manage_data/nb/manage_before_printer.c)
+        src2/manage_parseur/parseur_manage_percent.c src2/manage_parseur/parseur_utils.c src2/manage_parseur/parseur_percent_manage_flag.c maintest_1.0.c src2/manage_data/nb/manage_integer_before_printer.c src2/printer/printer_nb/head_printer.c src2/utils_main.c src2/printer/printer_nb/function_printer.c src2/manage_data/nb/unsigned/head_integer_unsigned.c src2/manage_data/nb/unsigned/utils_unsigned_integer.c)
 target_link_libraries(printf ${CMAKE_SOURCE_DIR}/libft/libft.a)

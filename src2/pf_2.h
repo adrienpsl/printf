@@ -84,21 +84,22 @@ typedef struct s_pf
 } t_pf;
 
 /*
-**	buffer function
+**	buffer function /////////////////////////
 */
 int ft_print_buff(t_buff *buff);
 int ft_fill_buff(char *str, t_buff *buff);
 void ft_set_buff(t_buff *buff);
 int buff_set_or_print(char *for_print,t_pf *pf);
+int buff_set_or_print_char(char for_print, t_pf *pf);
 
 /*
-**	head printf
+**	head printf /////////////////////////////////
 */
 long ft_printf(char *str, ...);
 int fill_buff(char *str, t_buff *buff);
 
 /*
-**  parseur
+**  parseur ///////////////////////////////////
 */
 int printf_parseur(t_pf *pf);
 long get_star_nxt_argv(t_pf *pf);
@@ -106,12 +107,32 @@ long get_star_nxt_argv(t_pf *pf);
 int str_manage_percent(t_pf *pf);
 int str_set_flag(char **str, t_pf *pf);
 
-
 /*
 **  int ///////////////////////////////////////
 */
 int manage_decimal(t_pf *pf);
 int manage_nb_before_printer(t_pf *pf);
+
+/*
+**  unsigned int
+*/
+int manage_unsigned(t_pf *pf);
+int set_lenght_unsigned(t_pf *pf);
+
+
+/*
+**  main_utils //////////////////////////////
+*/
+void put_and_count(char c, t_pf *pf);
+void putstr_and_count(char *s, t_pf *pf);
+
+/*
+**  printer
+*/
+void manage_printer(t_pf *pf);
+void printer_space(t_pf *pf);
+void printer_precision(t_pf *pf);
+void printer_nb(t_pf *pf);
 
 
 void set_op_zero(t_op *o);
