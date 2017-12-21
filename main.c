@@ -10,22 +10,24 @@
 
 int main()
 {
-//	t_op a;
-	t_buff b;
+////	t_op a;
+//	t_buff b;
 	char *s;
-
-	char string[4000];
-	char p[300] = "%d";
-
-	freopen("/dev/null", "a", stdout);
-	setbuf(stdout, string);
-
-	printf("-%1s- \n", "123456");
-	fflush(stdout);
-
-	ft_memset(string,0,100);
+//
+//	char string[4000];
+//	char p[300] = "%d";
+//
+//	freopen("/dev/null", "a", stdout);
 //	setbuf(stdout, string);
-	printf("-%1s- \n", "123456");
+//
+//	printf("-%1s- \n", "123456");
+//	fflush(stdout);
+//
+//	ft_memset(string,0,100);
+////	setbuf(stdout, string);
+//	printf("-%1s- \n", "123456");
+
+	ft_printf("% m d \n",22 );
 
 	return 0;
 }
