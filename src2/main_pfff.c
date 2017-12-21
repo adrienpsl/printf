@@ -10,6 +10,13 @@ static void set_zero_struct_pf()
 
 }
 
+int send_to_good_manager(t_pf *pf)
+{
+	if (check_char_into_str("Ddi",pf->specifier))
+		return manage_decimal(pf);
+
+}
+
 long ft_printf(char *str, ...)
 {
 	va_list ap;
@@ -25,8 +32,11 @@ long ft_printf(char *str, ...)
 
 	while (printf_parseur(&pf))
 	{
-
+		pf.data = get_star_nxt_argv(&pf);
+		send_to_good_manager(&pf);
 		// print la data, recommencer
+
 	}
+	ft_print_buff(&pf.buff);
 	return pf.retour;
 }

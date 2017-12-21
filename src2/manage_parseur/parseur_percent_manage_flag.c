@@ -24,6 +24,13 @@ static int manage_dot(char **str, t_pf *pf)
 	return (0);
 }
 
+static int manage_digit(char **str, t_op *option)
+{
+	option->nb_space = ft_atoi(*str);
+	clean_str(str);
+	return (0);
+}
+
 int str_set_flag(char **str, t_pf *pf)
 {
 	t_op *option;
@@ -34,11 +41,9 @@ int str_set_flag(char **str, t_pf *pf)
 	else if (**str == '.')
 		return manage_dot(str, pf);
 	else if (ft_isdigit(**str))
-	{
-		option->nb_space = ft_atoi(*str);
-		clean_str(str);
-		return (0);
-	}
+		return manage_digit(str,&pf->op);
+	else if (**str == '*')
+		option->nb_space = get_star_nxt_argv(pf);
 	else if (**str == '#')
 		option->diez = 1;
 	else if (**str == '+')

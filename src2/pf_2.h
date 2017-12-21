@@ -53,6 +53,7 @@ typedef struct s_int
 {
 	char nb_s[30];
 	t_length length;
+	char first_char;
 	uint8_t neg:1;
 } t_int;
 typedef struct s_op
@@ -99,12 +100,21 @@ int fill_buff(char *str, t_buff *buff);
 /*
 **  parseur
 */
-char printf_parseur(t_pf *pf);
+int printf_parseur(t_pf *pf);
 long get_star_nxt_argv(t_pf *pf);
 
 int str_manage_percent(t_pf *pf);
 int str_set_flag(char **str, t_pf *pf);
 
+
+/*
+**  int ///////////////////////////////////////
+*/
+int manage_decimal(t_pf *pf);
+int manage_nb_before_printer(t_pf *pf);
+
+
 void set_op_zero(t_op *o);
+
 
 #endif //PRINTF_PF_2_H

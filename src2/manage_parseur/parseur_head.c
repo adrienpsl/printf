@@ -18,16 +18,15 @@ static int parseur_manage_str(t_pf *pf)
 		else if (**pf->s != END)
 		{
 			tmp[0] = **pf->s;
-			buff_set_or_print(&tmp, pf);
 			(*pf->s)++;
+			buff_set_or_print(&tmp, pf);
 		}
 	}
-	return (1);
+	return (0);
 }
 
-char printf_parseur(t_pf *pf)
+int printf_parseur(t_pf *pf)
 {
 	ft_memset(&pf->op, 0, sizeof(t_op));
-	parseur_manage_str(pf);
-	ft_print_buff(&pf->buff);
+	return (parseur_manage_str(pf));
 }
