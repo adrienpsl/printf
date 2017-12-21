@@ -32,7 +32,7 @@ long ft_printf(char *str, ...)
 	// si le parceur choppe une etoile, il doit rappeler la fonction lui meme pour
 	// la precision et la size
 
-	while (printf_parseur(&pf))
+ 	while (printf_parseur(&pf))
 	{
 		pf.data = get_star_nxt_argv(&pf);
 		send_to_good_manager(&pf);

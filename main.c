@@ -50,10 +50,10 @@ void compare_pf(int nb_test, char *str, t_main_1_0 *pf)
 
 void test(char *s, char *d)
 {
-	memset(d,0,ft_strlen(d));
+	memset(d,0,200);
 	strcat(d, s);
-	printf(d, -42,-42);
-	ft_printf(d, -42,-42);
+	printf(d, 42, -42);
+	ft_printf(d, 42, -42);
 	printf(" \n");
 }
 
@@ -92,6 +92,9 @@ int main()
 	test("[[%08-d %8d]]\n", s);
 	test("[[%0.55-d %0.55d]]\n", s);
 */
+	test("[[%u   %u]]\n", s);
+	test("[[% u   % u]]\n", s);
+	test("[[% u   % u]]\n", s);
 
 	return 0;
 }

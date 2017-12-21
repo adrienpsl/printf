@@ -22,5 +22,5 @@ int manage_unsigned(t_pf *pf)
 	fill_number_str_unsigned(pf->data, pf);
 
 	manage_nb_before_printer(pf);
-//	manage_maker(pf);
+	manage_printer(pf);
 }

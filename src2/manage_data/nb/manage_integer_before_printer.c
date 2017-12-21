@@ -3,11 +3,11 @@
 static void manage_first_char(t_pf *pf)
 {
 	if (pf->pf_int.neg)
-		pf->pf_int.first_char = '-';
+		pf->pf_int.first_char[0] = '-';
 	else if (pf->op.plus)
-		pf->pf_int.first_char = '+';
+		pf->pf_int.first_char[0] = '+';
 	else if (pf->op.space)
-		pf->pf_int.first_char = ' ';
+		pf->pf_int.first_char[0] = ' ';
 	else if (pf->op.diez)
 	{
 		//		if (pf->o.specifier == HEXA || pf->o.specifier == hexa)
@@ -42,7 +42,7 @@ int manage_nb_before_printer(t_pf *pf)
 	size_nb = ft_strlen(pf->pf_int.nb_s);
 	manage_first_char(pf);
 	if (pf->specifier == 'u' || pf->specifier == 'U')
-		pf->pf_int.first_char = 0;
+		pf->pf_int.first_char[0] = 0;
 	manage_precision(pf,size_nb);
 	manage_length(pf, size_nb);
 }

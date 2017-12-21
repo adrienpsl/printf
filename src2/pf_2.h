@@ -53,7 +53,7 @@ typedef struct s_int
 {
 	char nb_s[30];
 	t_length length;
-	char first_char;
+	char first_char[2];
 	uint8_t neg:1;
 } t_int;
 typedef struct s_op
