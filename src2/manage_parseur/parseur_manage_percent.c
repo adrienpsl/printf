@@ -69,13 +69,13 @@ int str_manage_percent(t_pf *pf)
 
 	(*pf->s)++;
 	copy_s = pf->s;
-//	while (**copy_s != END)
-//	{
-		if (get_all_option(copy_s, &pf->op) == TRUE)
+	while (**copy_s != END)
+	{
+		if (get_all_option(copy_s, pf) == TRUE)
 		{
 			pf->s = copy_s;
 			return (TRUE);
 		}
-//	}
+	}
 	return (FALSE);
 }

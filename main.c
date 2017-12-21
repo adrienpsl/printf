@@ -4,30 +4,59 @@
 #include <stdint.h>
 #include <limits.h>
 #include <locale.h>
+#include <string.h>
 
+typedef struct s_main_1_0
+{
+	char ret[400];
+	char ret_pf[400];
+	char ret_ft_pf[400];
+	int nb_pf;
+	int nb_ft_pf;
+} t_main_1_0;
+
+void set_intobuff_pf(t_main_1_0 *PF, char *str, ...)
+{
+	va_list ft_pf;
+	va_list pf;
+
+	va_start(ft_pf, str);
+	va_start(pf, ft_pf);
+
+		fflush(stdout);
+	PF->nb_pf = printf(str, pf);
+	ft_strcat(PF->ret_pf, PF->ret);
+
+		ft_memset(PF->ret, 0, 400);
+	fflush(stdout);
+
+	PF->nb_ft_pf = ft_printf(str, ft_pf);
+	ft_strcat(PF->ret_pf, PF->ret);
+
+	va_end(ft_pf);
+	va_end(pf);
+}
+
+void compare_pf(int nb_test, char *str, t_main_1_0 *pf)
+{
+	if (strcmp(pf->ret_pf, pf->ret_ft_pf))
+		printf("le test %d pas marcher\n le test est : [[ %s ]] \n");
+	if (pf->nb_pf != pf->nb_ft_pf)
+		printf("le retour du test %d pas marcher\n le test est : [[ %s ]] \n", nb_test, str);
+}
 
 //int buff()
 
 int main()
 {
-////	t_op a;
-//	t_buff b;
-	char *s;
-//
-//	char string[4000];
-//	char p[300] = "%d";
-//
-//	freopen("/dev/null", "a", stdout);
-//	setbuf(stdout, string);
-//
-//	printf("-%1s- \n", "123456");
-//	fflush(stdout);
-//
-//	ft_memset(string,0,100);
-////	setbuf(stdout, string);
-//	printf("-%1s- \n", "123456");
+//	ft_printf("fdsf\n");
+//	ft_printf("lllll\n");
+//	ft_printf("%ldt\n");
+//	ft_printf("fdsf\n");
+//	ft_printf("%%%%%%%\n");
+//	ft_printf("%.*d",42,7);
+//	ft_printf("%77.42 + -hhljzd",42,7);
 
-	ft_printf("% m d \n",22 );
 
 	return 0;
 }

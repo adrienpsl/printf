@@ -13,12 +13,15 @@ static void clean_str(char **s)
 	}
 }
 
-static void manage_dot(char **str, t_pf *pf)
+static int manage_dot(char **str, t_pf *pf)
 {
-	if ((*str) + 2 == '*')
+	pf->op.dot = 1;
+	if (*((*str) + 1) == '*')
 		pf->op.nb_dot = get_star_nxt_argv(pf);
 	else
 		pf->op.nb_dot = ft_atoi((*str) + 1);
+	clean_str(str);
+	return (0);
 }
 
 int str_set_flag(char **str, t_pf *pf)
@@ -29,9 +32,13 @@ int str_set_flag(char **str, t_pf *pf)
 	if (**str == '0')
 		option->zero = 1;
 	else if (**str == '.')
-		manage_dot(str,pf);
+		return manage_dot(str, pf);
 	else if (ft_isdigit(**str))
-		option->nb_space = ft_atoi((*str) + 1);
+	{
+		option->nb_space = ft_atoi(*str);
+		clean_str(str);
+		return (0);
+	}
 	else if (**str == '#')
 		option->diez = 1;
 	else if (**str == '+')
@@ -40,11 +47,6 @@ int str_set_flag(char **str, t_pf *pf)
 		option->left = 1;
 	else if (**str == ' ')
 		option->space = 1;
-	else
-	{
-		(*str)++;
-		return (0);
-	}
-	clean_str(str);
+	(*str)++;
 	return (0);
 }

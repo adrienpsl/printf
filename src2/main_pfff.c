@@ -24,9 +24,9 @@ long ft_printf(char *str, ...)
 	// la precision et la size
 
 	while (printf_parseur(&pf))
-//	{
-//
-//		// print la data, recommencer
-//	}
+	{
+
+		// print la data, recommencer
+	}
 	return pf.retour;
 }

@@ -29,6 +29,5 @@ char printf_parseur(t_pf *pf)
 {
 	ft_memset(&pf->op, 0, sizeof(t_op));
 	parseur_manage_str(pf);
-	parseur_manage_str(pf);
 	ft_print_buff(&pf->buff);
 }
