@@ -3,18 +3,18 @@
 
 void printer_space(t_pf *pf)
 {
-	if (pf->op.dot)
+	if (pf->op.zero)
 	{
 		while (pf->op.nb_space > 0)
 		{
-			buff_set_or_print_char(' ', pf);
+			buff_set_or_print_char('0', pf);
 			pf->op.nb_space--;
 		}
 	}
 	else
 		while (pf->op.nb_space > 0)
 		{
-			buff_set_or_print_char('0', pf);
+			buff_set_or_print_char(' ', pf);
 			pf->op.nb_space--;
 		}
 }

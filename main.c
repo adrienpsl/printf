@@ -52,8 +52,8 @@ void test(char *s, char *d)
 {
 	memset(d,0,ft_strlen(d));
 	strcat(d, s);
-	printf(d, 42,-42);
-	ft_printf(d, 42,-42);
+	printf(d, -42,-42);
+	ft_printf(d, -42,-42);
 	printf(" \n");
 }
 
@@ -62,21 +62,22 @@ int main()
 {
 	char s[200];
 
-/*		ft_printf("fdsf\n");
-		ft_printf("lllll\n");
-		ft_printf("%ldt\n");
-		ft_printf("fdsf\n");
-		ft_printf("%%%%%%%\n");
-		ft_printf("%.*d",42,7);
-		ft_printf("%77.42 *000 ###.* 00+ -hhljzd [[%d]]",42,7,77, 88);
-	ft_printf("[[%d]]", 7);
-
-	ft_printf("%d\n", ft_printf("Les bornes :  %d, %d\n", -2147483648, 2147483647));
-	ft_printf("%d\n", ft_printf("Les bornes :  %u, %u\n", 0, 4294967295));
-	ft_printf("%d\n", ft_printf("Les bornes :  %o, %o\n", 0, 4294967295));
-	printf("%d\n", printf("Les bornesvrai :  %o, %o\n", 0, 4294967295));
-	ft_printf("%d\n", ft_printf("Les bornes :  %x, %x\n", 0, 4294967295));
-	printf("[[% 3d]]", 42);
+/*
+//		ft_printf("fdsf\n");
+//		ft_printf("lllll\n");
+//		ft_printf("%ldt\n");
+//		ft_printf("fdsf\n");
+//		ft_printf("%%%%%%%\n");
+//		ft_printf("%.*d",42,7);
+//		ft_printf("%77.42 *000 ###.* 00+ -hhljzd [[%d]]",42,7,77, 88);
+//	ft_printf("[[%d]]", 7);
+//
+//	ft_printf("%d\n", ft_printf("Les bornes :  %d, %d\n", -2147483648, 2147483647));
+//	ft_printf("%d\n", ft_printf("Les bornes :  %u, %u\n", 0, 4294967295));
+//	ft_printf("%d\n", ft_printf("Les bornes :  %o, %o\n", 0, 4294967295));
+//	printf("%d\n", printf("Les bornesvrai :  %o, %o\n", 0, 4294967295));
+//	ft_printf("%d\n", ft_printf("Les bornes :  %x, %x\n", 0, 4294967295));
+//	printf("[[% 3d]]", 42);
 
 	test("[[%44d  %44d]]\n", s);
 
@@ -84,10 +85,13 @@ int main()
 
 	test("[[%44 d  %44 d]]\n", s);
 
-	test("[[%4 4d  %4 4d]]\n", s);*/
+	test("[[%4 4d  %4 4d]]\n", s);
 
-//	test("[[%d%d]]\n", s);
-	test("[[%0 8.3d]]\n", s);
+	test("[[%d%d]]\n", s);
+	test("[[%0.8-d %08d]]\n", s);
+	test("[[%08-d %8d]]\n", s);
+	test("[[%0.55-d %0.55d]]\n", s);
+*/
 
 	return 0;
 }

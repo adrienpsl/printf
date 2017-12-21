@@ -37,10 +37,12 @@ static void manage_length(t_pf *pf, int size)
 int manage_nb_before_printer(t_pf *pf)
 {
 	int size_nb;
-	if (pf->op.nb_dot)
+	if (pf->op.nb_dot || pf->op.left)
 		pf->op.zero = 0;
 	size_nb = ft_strlen(pf->pf_int.nb_s);
 	manage_first_char(pf);
+	if (pf->specifier == 'u' || pf->specifier == 'U')
+		pf->pf_int.first_char = 0;
 	manage_precision(pf,size_nb);
 	manage_length(pf, size_nb);
 }

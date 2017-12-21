@@ -17,6 +17,7 @@ int set_lenght_unsigned(t_pf *pf)
 	else
 		pf->data = (unsigned int)pf->data;
 }
+
 //
 //void convert_base_fill_unsigned(t_pf *pf, char *base)
 //{
