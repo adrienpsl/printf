@@ -28,7 +28,8 @@ int send_to_good_manager(t_pf *pf)
 		return manage_CHAR(pf);
 	if (check_char_into_str("s",pf->specifier))
 		return manage_str(pf);
-
+	if (check_char_into_str("S",pf->specifier))
+		return manage_str_big(pf);
 
 }
 
@@ -44,7 +45,7 @@ long ft_printf(char *str, ...)
 
 	// si le parceur choppe une etoile, il doit rappeler la fonction lui meme pour
 	// la precision et la size
-
+	// faire une fonction qui clean tte les data
  	while (printf_parseur(&pf))
 	{
 		pf.data = get_star_nxt_argv(&pf);

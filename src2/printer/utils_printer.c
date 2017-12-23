@@ -1,5 +1,3 @@
-
-
 #include "../pf_2.h"
 
 void put_uni_into_tab(wchar_t c, char *tab, int precision)
@@ -26,7 +24,7 @@ void put_uni_into_tab(wchar_t c, char *tab, int precision)
 	}
 }
 
-size_t size_uni(wchar_t c, int precision)
+size_t size_uni(int c, int precision)
 {
 	if (c <= 126 && precision > 0)
 		return (1);

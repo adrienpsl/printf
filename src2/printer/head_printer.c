@@ -1,4 +1,10 @@
-#include "../../src2/pf_2.h"
+#include "../pf_2.h"
+
+void put_first_in_buf(t_pf *pf)
+{
+	buff_set_or_print(pf->pf_int.first_char, pf);
+	pf->pf_int.first_char[0] = 0;
+}
 
 void print_by_left(t_pf *pf)
 {
@@ -6,12 +12,6 @@ void print_by_left(t_pf *pf)
 	printer_precision(pf);
 	printer_value(pf);
 	printer_space(pf);
-}
-
-void put_first_in_buf(t_pf *pf)
-{
-	buff_set_or_print(pf->pf_int.first_char, pf);
-	pf->pf_int.first_char[0] = 0;
 }
 
 void print_by_right(t_pf *pf)

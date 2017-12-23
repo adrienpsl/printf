@@ -153,11 +153,17 @@ int set_lenght_unsigned(t_pf *pf);
 */
 size_t strlen_uni(wchar_t *s, int precision);
 void put_uni_into_tab(int c, char *tab, int precision);
+size_t size_uni(wchar_t c, int precision);
 
 /*
 **  str style
 */
 int manage_str(t_pf *pf);
+
+/*
+**  str uni style
+*/
+int manage_str_big(t_pf *pf);
 
 /*
 **  char style
