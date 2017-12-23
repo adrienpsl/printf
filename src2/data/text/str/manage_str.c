@@ -19,7 +19,7 @@ int manage_str_big(t_pf *pf)
 	ft_memset(&pf->text, 0, sizeof(t_text));
 
 	pf->text.u_out = pf->data;
-	pf->text.precision = pf->op.nb_dot;
+	pf->text.precision = pf->op.dot ? pf->op.nb_dot : 4;
 	pf->op.nb_dot = 0;
 
 	manage_before_printer(pf);

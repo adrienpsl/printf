@@ -1,6 +1,6 @@
 #include "../pf_2.h"
 
-void put_uni_into_tab(wchar_t c, char *tab, int precision)
+void put_uni_into_tab(int c, char *tab, int precision)
 {
 	if (c <= 126 && precision > 0)
 		tab[0] = c;
@@ -45,5 +45,7 @@ size_t strlen_uni(wchar_t *s, int precision)
 	while (*s)
 	{
 		size += size_uni(*s,precision);
+		s++;
 	}
+	return (size);
 }

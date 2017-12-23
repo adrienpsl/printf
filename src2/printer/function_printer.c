@@ -54,19 +54,17 @@ void manage_buff_and_sbig(t_pf *pf)
 
 	char tmp[5];
 
-	ft_memset(&tmp, 0, 5);
-	if (pf->op.dot)
+	while (*pf->text.u_out)
 	{
-		while (*pf->text.u_out)
-		{
-				put_uni_into_tab(pf->text.precision, tmp, pf->text.precision);
-				buff_set_or_print(tmp, pf);
-			pf->text.u_out++;
-		}
+		ft_memset(&tmp, 0, 5);
+		put_uni_into_tab(*pf->text.u_out, tmp, pf->text.precision);
+		buff_set_or_print(tmp, pf);
+		pf->text.u_out++;
 	}
-	else
-		buff_set_or_print(pf->text.out, pf);
 }
+//	else
+//		buff_set_or_print(pf->text.out, pf);
+//}
 
 /*
 **	dispatch between specifier s / S / other

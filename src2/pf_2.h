@@ -22,33 +22,6 @@ typedef struct s_buff
 	size_t	remain_space;
 } t_buff;
 
-typedef enum e_length
-{
-	nothing,
-	H,
-	SHORT,
-	LONG,
-	LONG_LONG,
-	INTMAX,
-	SIZE_T
-} t_length;
-
-/*typedef enum e_specifier
-{
-	NOTHING,    //0
-	DECIMAL,    //1
-	OCTA,        //2
-	UNSIGNED,    //3
-	HEXA,        //4
-	hexa,        //4
-	CHAR,        //5
-	kart,        //6
-	STR,        //7
-	str,        //8
-	PTR,        //9
-	PERCENT
-} t_specifier;*/
-
 typedef struct s_int
 {
 	char nb_s[300];
@@ -104,13 +77,12 @@ int buff_set_or_print_char(char for_print, t_pf *pf);
 **	head printf /////////////////////////////////
 */
 long ft_printf(char *str, ...);
-int fill_buff(char *str, t_buff *buff);
 
 /*
 **  parseur ///////////////////////////////////
 */
 int printf_parseur(t_pf *pf);
-long get_star_nxt_argv(t_pf *pf);
+long get_nxt_argv(t_pf *pf);
 
 int str_manage_percent(t_pf *pf);
 int str_set_flag(char **str, t_pf *pf);
@@ -140,6 +112,11 @@ int manage_hexa(t_pf *pf);
 **  binary style
 */
 int manage_binaire(t_pf *pf);
+
+/*
+**  ptr style
+*/
+int manage_ptr(t_pf *pf);
 
 /*
 **  unsigned utils
@@ -180,6 +157,7 @@ int manage_CHAR(t_pf *pf);
 */
 void put_and_count(char c, t_pf *pf);
 void putstr_and_count(char *s, t_pf *pf);
+long get_star_nxt_argv(t_pf *pf);
 
 /*
 **  printer

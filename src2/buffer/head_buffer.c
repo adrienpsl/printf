@@ -14,6 +14,7 @@ int buff_set_or_print_char(char for_print, t_pf *pf)
 		ft_print_buff(&pf->buff);
 		ft_fill_buff(for_print, &pf->buff);
 	}
+	pf->retour++;
 }
 
 
@@ -22,6 +23,7 @@ int buff_set_or_print_char(char for_print, t_pf *pf)
 */
 int buff_set_or_print(char *for_print, t_pf *pf)
 {
+	pf->retour += ft_strlen(for_print);
 	if (ft_fill_buff(for_print, &pf->buff) == 0)
 	{
 		ft_print_buff(&pf->buff);

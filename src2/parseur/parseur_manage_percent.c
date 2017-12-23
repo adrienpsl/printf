@@ -30,7 +30,7 @@ static int get_length_nxt(char **s, t_pf *pf)
 
 static int get_all_option(char **s, t_pf *pf)
 {
-	if (check_char_into_str("DdiOoUuxXcCsSP%Bb", **s))
+	if (check_char_into_str("DdiOoUuxXcCsSpP%Bb", **s))
 	{
 		pf->specifier = **s;
 		(*s)++;

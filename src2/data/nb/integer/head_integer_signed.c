@@ -2,16 +2,16 @@
 
 static int set_lenght_decimal(t_pf *pf)
 {
-	if (pf->op.length == H)
+	if (pf->op.length == 'H')
 		pf->data = (char) pf->data;
-	else if (pf->op.length == SHORT)
+	else if (pf->op.length == 'h')
 		pf->data = (short) pf->data;
-	else if (pf->op.length == LONG);
-	else if (pf->op.length == INTMAX)
+	else if (pf->op.length == 'l');
+	else if (pf->op.length == 'j')
 		pf->data = (intmax_t) (pf->data);
-	else if (pf->op.length == SIZE_T)
+	else if (pf->op.length == 'z')
 		pf->data = (size_t) pf->data;
-	else if (pf->op.length == LONG_LONG)
+	else if (pf->op.length == 'L')
 		pf->data = (long long) pf->data;
 	else
 		pf->data = (int) pf->data;

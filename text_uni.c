@@ -10,7 +10,7 @@ void main()
 	printf("=%S=\n", a);
 	printf("=%10S=\n", a);
 	printf("=%.2S=\n", a);
-	printf("=%100S=\n", a);
+	printf("=%100 0S=\n", a);
 	printf("=%S=\n", a);
 	printf("=%S=\n", a);
 }

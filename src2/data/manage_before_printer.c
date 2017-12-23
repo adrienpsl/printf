@@ -5,7 +5,7 @@ static void manage_first_char(t_pf *pf)
 	if (check_char_into_str("UuCcSs", pf->specifier))
 	{
 		pf->pf_int.first_char[0] = 0;
-		return ;
+		return;
 	}
 	if (pf->pf_int.neg)
 		pf->pf_int.first_char[0] = '-';
@@ -19,7 +19,7 @@ static void manage_first_char(t_pf *pf)
 			pf->pf_int.first_char[0] = '0';
 		if (pf->specifier == 'X')
 			ft_strcat(pf->pf_int.first_char, "0X");
-		else if (pf->specifier == 'x')
+		else if (check_char_into_str("xpP", pf->specifier))
 			ft_strcat(pf->pf_int.first_char, "0x");
 	}
 }
@@ -35,20 +35,34 @@ static void manage_length(t_pf *pf, int size)
 {
 	if (pf->pf_int.first_char[0])
 		pf->op.nb_space -= ft_strlen(pf->pf_int.first_char);
-	if (pf->op.nb_space < pf->op.nb_dot + size)
-		pf->op.nb_space = 0;
+	if (pf->op.dot)
+		if (pf->op.nb_space < pf->op.nb_dot + size)
+			pf->op.nb_space = 0;
+		else
+			pf->op.nb_space -= pf->op.nb_dot + size;
 	else
-		pf->op.nb_space -= pf->op.nb_dot + size;
+		pf->op.nb_space -= size;
 }
 
 size_t get_size(t_pf *pf)
 {
-	if (check_char_into_str("DdiXxOoBbUu", pf->specifier))
+	size_t size;
+
+	if (check_char_into_str("DdiXxOoBbUuCc", pf->specifier))
 		return (ft_strlen(pf->pf_int.nb_s));
 	else if (check_char_into_str("S", pf->specifier))
-		return (strlen_uni(pf->text.u_out, pf->op.nb_dot));
+	{
+		size = strlen_uni(pf->text.u_out, pf->text.precision);
+		return (size);
+	}
 	else if (check_char_into_str("s", pf->specifier))
-		return (ft_strlen(pf->text.out));
+	{
+		size = ft_strlen(pf->text.out);
+		if (pf->text.precision)
+			return (pf->text.precision < size ? pf->text.precision : size);
+		else
+			return (size);
+	}
 }
 
 int manage_before_printer(t_pf *pf)

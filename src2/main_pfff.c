@@ -30,6 +30,8 @@ int send_to_good_manager(t_pf *pf)
 		return manage_str(pf);
 	if (check_char_into_str("S",pf->specifier))
 		return manage_str_big(pf);
+	if (check_char_into_str("Pp",pf->specifier))
+		return manage_ptr(pf);
 
 }
 
@@ -41,14 +43,14 @@ long ft_printf(char *str, ...)
 	va_start(ap, str);
 	pf.ap = &ap;
 	pf.s = &str;
+	pf.retour = 0;
 	ft_set_buff(&pf.buff);
-
 	// si le parceur choppe une etoile, il doit rappeler la fonction lui meme pour
 	// la precision et la size
 	// faire une fonction qui clean tte les data
  	while (printf_parseur(&pf))
 	{
-		pf.data = get_star_nxt_argv(&pf);
+		pf.data = get_nxt_argv(&pf);
 		send_to_good_manager(&pf);
 		// print la data, recommencer
 
