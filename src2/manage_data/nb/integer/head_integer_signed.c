@@ -48,9 +48,7 @@ int manage_decimal(t_pf *pf)
 {
 	ft_memset(&pf->pf_int, 0, sizeof(t_int));
 	set_lenght_decimal(pf);
-
 	fill_number_str_signed(pf->data, pf);
-
-	manage_nb_before_printer(pf);
+	manage_before_printer(pf);
 	manage_printer(pf);
 }

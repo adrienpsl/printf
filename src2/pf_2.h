@@ -51,11 +51,19 @@ typedef enum e_length
 
 typedef struct s_int
 {
-	char nb_s[30];
-	t_length length;
-	char first_char[2];
+	char nb_s[300];
+	char first_char[3];
 	uint8_t neg:1;
 } t_int;
+
+typedef struct s_text
+{
+	wchar_t *u_out;
+	char *out;
+	long precision;
+	uint8_t uni:1;
+} t_text;
+
 typedef struct s_op
 {
 	long nb_dot;
@@ -75,10 +83,10 @@ typedef struct s_pf
 	t_buff buff;
 	t_op op;
 	t_int pf_int;
+	t_text text;
 	char specifier;
 	long data;
 	long retour;
-	char *out;
 	va_list *ap;
 	char **s;
 } t_pf;
@@ -108,17 +116,58 @@ int str_manage_percent(t_pf *pf);
 int str_set_flag(char **str, t_pf *pf);
 
 /*
-**  int ///////////////////////////////////////
+**  =======================  int ==========================
 */
 int manage_decimal(t_pf *pf);
-int manage_nb_before_printer(t_pf *pf);
+int manage_before_printer(t_pf *pf);
 
 /*
 **  unsigned int
 */
 int manage_unsigned(t_pf *pf);
+
+/*
+**  octal style
+*/
+int manage_octal(t_pf *pf);
+
+/*
+**  hexa style
+*/
+int manage_hexa(t_pf *pf);
+
+/*
+**  binary style
+*/
+int manage_binaire(t_pf *pf);
+
+/*
+**  unsigned utils
+*/
+void convert_base_fill_unsigned(t_pf *pf, char *base);
 int set_lenght_unsigned(t_pf *pf);
 
+
+/*
+**  ================= text =======================
+*/
+size_t strlen_uni(wchar_t *s, int precision);
+void put_uni_into_tab(int c, char *tab, int precision);
+
+/*
+**  str style
+*/
+int manage_str(t_pf *pf);
+
+/*
+**  char style
+*/
+int manage_char(t_pf *pf);
+
+/*
+**  uni char style
+*/
+int manage_CHAR(t_pf *pf);
 
 /*
 **  main_utils //////////////////////////////
@@ -132,7 +181,7 @@ void putstr_and_count(char *s, t_pf *pf);
 void manage_printer(t_pf *pf);
 void printer_space(t_pf *pf);
 void printer_precision(t_pf *pf);
-void printer_nb(t_pf *pf);
+void printer_value(t_pf *pf);
 
 
 void set_op_zero(t_op *o);

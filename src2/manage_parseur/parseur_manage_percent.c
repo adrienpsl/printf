@@ -5,10 +5,10 @@ static int get_length_nxt(char **s, t_pf *pf)
 	t_op *option;
 
 	option = &pf->op;
-	if (**s == 'j' || option->length == 'j')
+	if (**s == 'j' || (**s == 'j' && option->length == 'j'))
 		option->length = 'j';
 
-	else if (**s == 'z' || option->length == 'z')
+	else if (**s == 'z' || (**s == 'z' && option->length == 'z'))
 		option->length = 'z';
 
 	else if (**s == 'l' && option->length == 'l')
@@ -30,7 +30,7 @@ static int get_length_nxt(char **s, t_pf *pf)
 
 static int get_all_option(char **s, t_pf *pf)
 {
-	if (check_char_into_str("DdiOoUuxXcCsSP%", **s))
+	if (check_char_into_str("DdiOoUuxXcCsSP%Bb", **s))
 	{
 		pf->specifier = **s;
 		(*s)++;

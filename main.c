@@ -50,51 +50,217 @@ void compare_pf(int nb_test, char *str, t_main_1_0 *pf)
 
 void test(char *s, char *d)
 {
-	memset(d,0,200);
+	memset(d, 0, 200);
 	strcat(d, s);
 	printf(d, 42, -42);
 	ft_printf(d, 42, -42);
 	printf(" \n");
 }
 
+void test2(char *s, char *d)
+{
+	memset(d, 0, 200);
+	strcat(d, s);
+	printf(d, 'c', 'z');
+	ft_printf(d, 'c', 'z');
+	printf(" \n");
+}
+
+void test3(char *s, char *d)
+{
+	memset(d, 0, 200);
+	strcat(d, s);
+	printf(d, 0x1234, 'z');
+	ft_printf(d, 0x1234, 'z');
+	printf(" \n");
+}
 
 int main()
 {
 	char s[200];
-
-/*
-//		ft_printf("fdsf\n");
-//		ft_printf("lllll\n");
-//		ft_printf("%ldt\n");
-//		ft_printf("fdsf\n");
-//		ft_printf("%%%%%%%\n");
-//		ft_printf("%.*d",42,7);
-//		ft_printf("%77.42 *000 ###.* 00+ -hhljzd [[%d]]",42,7,77, 88);
-//	ft_printf("[[%d]]", 7);
+	char *o = "super";
+//	printf("--%08.9s--\n",o);
 //
-//	ft_printf("%d\n", ft_printf("Les bornes :  %d, %d\n", -2147483648, 2147483647));
-//	ft_printf("%d\n", ft_printf("Les bornes :  %u, %u\n", 0, 4294967295));
-//	ft_printf("%d\n", ft_printf("Les bornes :  %o, %o\n", 0, 4294967295));
-//	printf("%d\n", printf("Les bornesvrai :  %o, %o\n", 0, 4294967295));
-//	ft_printf("%d\n", ft_printf("Les bornes :  %x, %x\n", 0, 4294967295));
-//	printf("[[% 3d]]", 42);
+////	ft_printf("[[%08.9s]]",o);
+//	ft_printf("[[%5#x]]",42);
+//	printf("[[%5#x]]",42);
 
-	test("[[%44d  %44d]]\n", s);
+	/*
+	//	test("fdsf\n",s);
+	//	test("lllll\n",s);
+	//	test("%ldt\n",s);
+	//	test("fdsf\n",s);
+	//	test("%%%%%%%\n",s);
+	////	test("%77.42 *000 ###.* 00+ -hhljzd [[%d]]",s);
+	//	test("[[%d]]", s);
 
-	test("[[%44.8d  %44.8d]]\n", s);
+	//		ft_printf("%d\n", ft_printf("Les bornes :  %d, %d\n", -2147483648, 2147483647));
+	//		ft_printf("%d\n", ft_printf("Les bornes :  %u, %u\n", 0, 4294967295));
+	//		ft_printf("%d\n", ft_printf("Les bornes :  %o, %o\n", 0, 4294967295));
+	//		printf("%d\n", printf("Les bornesvrai :  %o, %o\n", 0, 4294967295));
+	//		ft_printf("%d\n", ft_printf("Les bornes :  %x, %x\n", 0, 4294967295));
+	//		printf("[[% 3d]]", 42);*/
 
-	test("[[%44 d  %44 d]]\n", s);
 
-	test("[[%4 4d  %4 4d]]\n", s);
+//			test("[[%44d  %44d]]\n", s);
+//			test("[[%6d]]\n", s);
+//			test("[[%44.8d  %44.8d]]\n", s);
+//
+//			test("[[%44 d  %44 d]]\n", s);
+//
+//			test("[[%4 4d  %4 4d]]\n", s);
+//			test("[[%d%d]]\n", s);
+//			test("[[%0.8-d %08d]]\n", s);
+//			test("[[%08-d %8d]]\n", s);
+//		test("[[%0.55-d %0.55d]]\n", s);
+//
+//	//	// //	===== test unsigned ===============================
+//			test("[[%u   %u]]\n", s);
+//			test("[[% h u   % h u]]\n", s);
+//			test("[[% hh u   % hh u]]\n", s);
+//			test("[[% hhh u   % hhh u]]\n", s);
+//
+//			test("[[% l u   % lu]]\n", s);
+//			test("[[% ll u   % ll u]]\n", s);
+//			test("[[% lll u   % lll u]]\n", s);
+//
+//			test("[[% z u   % z u]]\n", s);
+//			test("[[% j u   % j u]]\n", s);
+//
+//			test("[[% -+  .25    u   % +-  .25   u]]\n", s);
+//			test("[[% -+  0.25    u   % +-  0.25   u]]\n", s);
+//			test("[[% -+  82.25    u   % +-  82.25   u]]\n", s);
+//			test("[[% -+  20.25    u   % +-  20.25   u]]\n", s);
+//			test("[[% -+  20    u   % +-  20   u]]\n", s);
 
-	test("[[%d%d]]\n", s);
-	test("[[%0.8-d %08d]]\n", s);
-	test("[[%08-d %8d]]\n", s);
-	test("[[%0.55-d %0.55d]]\n", s);
-*/
-	test("[[%u   %u]]\n", s);
-	test("[[% u   % u]]\n", s);
-	test("[[% u   % u]]\n", s);
+
+	//	//	===== test octal ===============================
+//		test("[[%o   %o]]\n", s);
+//		test("[[% h o   % h o]]\n", s);
+//		test("[[% hh o   % hh o]]\n", s);
+//		test("[[% hhh o   % hhh o]]\n", s);
+//
+//		test("[[% l o   % lo]]\n", s);
+//		test("[[% ll o   % ll o]]\n", s);
+//		test("[[% lll o   % lll o]]\n", s);
+
+//		test("[[% z o   % z o]]\n", s);
+//		test("[[% j o   % j o]]\n", s);
+//
+//		test("[[% -+  .25    o   % +-  .25   o]]\n", s);
+//		test("[[% -+  0.25    o   % +-  0.25   o]]\n", s);
+//		test("[[% -+  82.25    o   % +-  82.25   o]]\n", s);
+//		test("[[% -+  20.25    o   % +-  20.25   o]]\n", s);
+//		test("[[% -+  20    o   % +-  20   o]]\n", s);
+
+		test("[[% -+  .25    # o   % +-  .25   # o]]\n", s);
+		test("[[% -+  0.25    # o   % +-  0.25   # o]]\n", s);
+		test("[[% -+  82.25    # o   % +-  82.25   # o]]\n", s);
+		test("[[% -+  20.25    # o   % +-  20.25   # o]]\n", s);
+		test("[[% -+  20    # o   % +-  20   # o]]\n", s);
+
+
+	/*
+		//	===== test hexa  0  ===============================
+	//	test("[[%# x   %# x]]\n", s);
+	//	test("[[% h # x   % h # x]]\n", s);
+	//	test("[[% hh # x   % hh # x]]\n", s);
+	//	test("[[% hhh # x   % hhh # x]]\n", s);
+	//
+	//	test("[[% l # x   % l# x]]\n", s);
+	//	test("[[% ll # x   % ll # x]]\n", s);
+	//	test("[[% lll # x   % lll # x]]\n", s);
+	//
+	//	test("[[% z # x   % z # x]]\n", s);
+	//	test("[[% j # x   % j # x]]\n", s);
+	//
+	//	test("[[% -+  .25    # x   % +-  .25   # x]]\n", s);
+	//	test("[[% -+  0.25    # x   % +-  0.25   # x]]\n", s);
+	//	test("[[% -+  82.25    # x   % +-  82.25   # x]]\n", s);
+	//	test("[[% -+  20.25    # x   % +-  20.25   # x]]\n", s);
+	//	test("[[% -+  20    # x   % +-  20   # x]]\n", s);
+	//
+	//	test("[[%## x   %## x]]\n", s);
+	//	test("[[% -+  .25    # # x   % +-  .25   # # x]]\n", s);
+	//	test("[[% -+  0.25    # # x   % +-  0.25   # # x]]\n", s);
+	//	test("[[% -+  82.25    # # x   % +-  82.25   # # x]]\n", s);
+	//	test("[[% -+  20.25    # # x   % +-  20.25   # # x]]\n", s);
+	//	test("[[% -+  20    # # x   % +-  20   # # x]]\n", s);
+
+
+		//	===== test hexa  1  ===============================
+	//	test("[[% x   % x]]\n", s);
+	//	test("[[% h  x   % h  x]]\n", s);
+	//	test("[[% hh  x   % hh  x]]\n", s);
+	//	test("[[% hhh  x   % hhh  x]]\n", s);
+	//
+	//	test("[[% l  x   % l x]]\n", s);
+	//	test("[[% ll  x   % ll  x]]\n", s);
+	//	test("[[% lll  x   % lll  x]]\n", s);
+	//
+	//	test("[[% z  x   % z  x]]\n", s);
+	//	test("[[% j  x   % j  x]]\n", s);
+	//
+	//	test("[[% -+  .25     x   % +-  .25    x]]\n", s);
+	//	test("[[% -+  0.25     x   % +-  0.25    x]]\n", s);
+	//	test("[[% -+  82.25     x   % +-  82.25    x]]\n", s);
+	//	test("[[% -+  20.25     x   % +-  20.25    x]]\n", s);
+	//	test("[[% -+  20     x   % +-  20    x]]\n", s);
+	//
+	//	test("[[% x   % x]]\n", s);
+	//	test("[[% -+  .25      x   % +-  .25     x]]\n", s);
+	//	test("[[% -+  0.25      x   % +-  0.25     x]]\n", s);
+	//	test("[[% -+  82.25      x   % +-  82.25     x]]\n", s);
+	//	test("[[% -+  20.25      x   % +-  20.25     x]]\n", s);
+	//	test("[[% -+  20      x   % +-  20     x]]\n", s);
+	//
+	//
+	//	test("[[% #  X   % #  X]]\n", s);
+	//	test("[[% h  #  X   % h  #  X]]\n", s);
+	//	test("[[% hh  #  X   % hh  #  X]]\n", s);
+	//	test("[[% hhh  #  X   % hhh  #  X]]\n", s);
+	//
+	//	test("[[% l  #  X   % l #  X]]\n", s);
+	//	test("[[% ll  #  X   % ll  #  X]]\n", s);
+	//	test("[[% lll  #  X   % lll  #  X]]\n", s);
+	//
+	//	test("[[% z  #  X   % z  #  X]]\n", s);
+	//	test("[[% j  #  X   % j  #  X]]\n", s);
+	//
+	//	test("[[% -+  .25     #  X   % +-  .25    #  X]]\n", s);
+	//	test("[[% -+  0.25     #  X   % +-  0.25    #  X]]\n", s);
+	//	test("[[% -+  82.25     #  X   % +-  82.25    #  X]]\n", s);
+	//	test("[[% -+  20.25     #  X   % +-  20.25    #  X]]\n", s);
+	//	test("[[% -+  20     #  X   % +-  20    #  X]]\n", s);
+	//
+	//	test("[[% #  X   % #  X]]\n", s);
+	//	test("[[% -+  .25      #  X   % +-  .25     #  X]]\n", s);
+	//	test("[[% -+  0.25      #  X   % +-  0.25     #  X]]\n", s);
+	//	test("[[% -+  82.25      #  X   % +-  82.25     #  X]]\n", s);
+	//	test("[[% -+  20.25      #  X   % +-  20.25     #  X]]\n", s);
+	//	test("[[% -+  20      #  X   % +-  20     #  X]]\n", s);
+	*/
+	/*
+		test2("[[%5.c]]\n", s);
+		test2("[[%5.22c]]\n", s);
+		test2("[[%5c]]\n", s);
+		test2("[[%.44c]]\n", s);
+		test2("[[%-+#c]]\n", s);
+		test2("[[%c]]\n", s);
+		test2("[[% c]]\n", s);
+		test2("[[%.c]]\n", s);
+
+		test3("[[%5.C]]\n", s);
+		test3("[[%5.33C]]\n", s);
+		test3("[[%5C]]\n", s);
+		test3("[[%.44C]]\n", s);
+		test3("[[%-+#C]]\n", s);
+		test3("[[%C]]\n", s);
+		test3("[[% C]]\n", s);
+		test3("[[%.C]]\n", s);
+
+		test3("[[%  .C]]\n", s);
+	*/
 
 	return 0;
 }

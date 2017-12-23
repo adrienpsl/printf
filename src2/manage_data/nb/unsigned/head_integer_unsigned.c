@@ -18,9 +18,10 @@ static int fill_number_str_unsigned(unsigned long nb, t_pf *pf)
 
 int manage_unsigned(t_pf *pf)
 {
+	ft_memset(&pf->pf_int, 0, sizeof(t_int));
 	set_lenght_unsigned(pf);
 	fill_number_str_unsigned(pf->data, pf);
 
-	manage_nb_before_printer(pf);
+	manage_before_printer(pf);
 	manage_printer(pf);
 }

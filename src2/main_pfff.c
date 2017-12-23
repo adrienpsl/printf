@@ -16,6 +16,19 @@ int send_to_good_manager(t_pf *pf)
 		return manage_decimal(pf);
 	if (check_char_into_str("Uu",pf->specifier))
 		return manage_unsigned(pf);
+	if (check_char_into_str("Oo",pf->specifier))
+		return manage_octal(pf);
+	if (check_char_into_str("Xx",pf->specifier))
+		return manage_hexa(pf);
+	if (check_char_into_str("Bb",pf->specifier))
+		return manage_binaire(pf);
+	if (check_char_into_str("c",pf->specifier))
+		return manage_char(pf);
+	if (check_char_into_str("C",pf->specifier))
+		return manage_CHAR(pf);
+	if (check_char_into_str("s",pf->specifier))
+		return manage_str(pf);
+
 
 }
 
