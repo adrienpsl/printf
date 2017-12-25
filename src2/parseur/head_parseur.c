@@ -43,7 +43,7 @@ int str_manage_percent(t_pf *pf)
 		}
 		if (get_length_nxt(pf) == TRUE)
 			continue;
-		if (str_set_flag(pf->s, pf) == TRUE)
+		if (str_set_flag(pf) == TRUE)
 			continue;
 		return (FALSE);
 	}

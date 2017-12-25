@@ -31,29 +31,26 @@ static int manage_digit(char **str, t_op *option)
 	return (TRUE);
 }
 
-int str_set_flag(char **str, t_pf *pf)
+int str_set_flag(t_pf *pf)
 {
-	t_op *option;
-
-	option = &pf->op;
-	if (**str == '0')
-		option->zero = 1;
-	else if (**str == '.')
-		return manage_dot(str, pf);
-	else if (ft_isdigit(**str))
-		return manage_digit(str, &pf->op);
-	else if (**str == '*')
-		option->nb_space = get_star_nxt_argv(pf);
-	else if (**str == '#')
-		option->diez = 1;
-	else if (**str == '+')
-		option->plus = 1;
-	else if (**str == '-')
-		option->left = 1;
-	else if (**str == ' ')
-		option->space = 1;
+	if (**pf->s == '0')
+		pf->op.zero = 1;
+	else if (**pf->s == '.')
+		return manage_dot(pf->s, pf);
+	else if (ft_isdigit(**pf->s))
+		return manage_digit(pf->s, &pf->op);
+	else if (**pf->s == '*')
+		pf->op.nb_space = get_star_nxt_argv(pf);
+	else if (**pf->s == '#')
+		pf->op.diez = 1;
+	else if (**pf->s == '+')
+		pf->op.plus = 1;
+	else if (**pf->s == '-')
+		pf->op.left = 1;
+	else if (**pf->s == ' ')
+		pf->op.space = 1;
 	else
 		return (FALSE);
-	(*str)++;
+	(*pf->s)++;
 	return (TRUE);
 }
