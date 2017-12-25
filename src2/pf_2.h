@@ -102,7 +102,6 @@ void check_if_null_data(t_pf *pf);
 int printf_parseur(t_pf *pf);
 long get_nxt_argv(t_pf *pf);
 
-int str_manage_percent(char **s,t_pf *pf);
 int str_set_flag(char **str, t_pf *pf);
 
 /*
@@ -168,6 +167,11 @@ void manage_char(t_pf *pf);
 **  uni char style
 */
 void manage_CHAR(t_pf *pf);
+
+/*
+**    n option style
+*/
+void manage_n(t_pf *pf);
 
 /*
 **  main_utils //////////////////////////////

@@ -1,8 +1,18 @@
-/*
+
+
 #include "src2/pf_2.h"
-int		main()
+
+int main()
 {
-	char		c;
+
+	int n;
+	ft_printf("%s: %nFoo\n", "hello", &n);
+	ft_printf("%*sBar\n", n, "");
+
+	//	printf("%s: %nFoo\n", "hello", &n);
+	//	printf("%*sBar\n", n, "");
+
+	/*char		c;
 	int		*n;
 	char	*str = NULL;
 
@@ -619,9 +629,8 @@ exit(0);
 
 	ft_printf("%d\n", ft_printf("16string 1 %.6s string 2 %.6s\n", "toto", "bonjour"));
 	printf("%d\n\n", printf("16string 1 %.6s string 2 %.6s\n\n", "toto", "bonjour"));
-
+*/
 
 	return (0);
 }
 
-*/

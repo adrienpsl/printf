@@ -24,6 +24,8 @@ void send_to_good_manager(t_pf *pf)
 		return manage_ptr(pf);
 	if (check_char_into_str("%", pf->specifier))
 		buff_set_or_print_char('%',pf);
+	if (check_char_into_str("n", pf->specifier))
+		return manage_n(pf);
 }
 
 long ft_printf(char *str, ...)
