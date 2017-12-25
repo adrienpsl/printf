@@ -100,9 +100,7 @@ void check_if_null_data(t_pf *pf);
 **  parseur ///////////////////////////////////
 */
 int printf_parseur(t_pf *pf);
-long get_nxt_argv(t_pf *pf);
-
-int str_set_flag(char **str, t_pf *pf);
+int str_set_flag(t_pf *pf);
 
 /*
 **  =======================  int ==========================

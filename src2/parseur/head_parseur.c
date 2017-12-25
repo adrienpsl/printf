@@ -33,18 +33,17 @@ static int get_specifier(t_pf *pf)
 	return (0);
 }
 
-int str_manage_percent(char **str, t_pf *pf)
+int str_manage_percent(t_pf *pf)
 {
-	while (**str != END)
+	while (**pf->s != END)
 	{
 		if (get_specifier(pf) == TRUE)
 		{
-			pf->s = str;
 			return (TRUE);
 		}
 		if (get_length_nxt(pf) == TRUE)
 			continue;
-		if (str_set_flag(str, pf) == TRUE)
+		if (str_set_flag(pf->s, pf) == TRUE)
 			continue;
 		return (FALSE);
 	}
@@ -59,7 +58,7 @@ int printf_parseur(t_pf *pf)
 		{
 			ft_memset(&(pf->op), 0, sizeof(t_op));
 			(*pf->s)++;
-			if (str_manage_percent(pf->s ,pf) == TRUE)
+			if (str_manage_percent(pf) == TRUE)
 			{
 				return (TRUE);
 			}
