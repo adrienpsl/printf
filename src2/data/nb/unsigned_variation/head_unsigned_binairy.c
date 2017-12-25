@@ -1,6 +1,6 @@
 #include "../../../pf_2.h"
 
-int manage_binaire(t_pf *pf)
+void manage_binaire(t_pf *pf)
 {
 	ft_memset(&pf->pf_int, 0, sizeof(t_int));
 	set_lenght_unsigned(pf);
@@ -9,5 +9,4 @@ int manage_binaire(t_pf *pf)
 	pf->op.space = 0;
 	manage_before_printer(pf);
 	manage_printer(pf);
-	return (1);
 }

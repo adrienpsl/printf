@@ -5,6 +5,9 @@
 #ifndef PRINTF_PF_2_H
 #define PRINTF_PF_2_H
 
+void deb(char *str);
+
+
 
 # include "../libft/includes/libft.h"
 
@@ -14,6 +17,7 @@
 #define TRUE 1
 #define END 0
 #define FALSE 0
+#define BUFF_SIZE 40952
 
 
 typedef struct s_buff
@@ -48,6 +52,7 @@ typedef struct s_op
 	uint8_t left:1;
 	uint8_t plus:1;
 	uint8_t space:1;
+
 } t_op;
 
 
@@ -57,6 +62,8 @@ typedef struct s_pf
 	t_op op;
 	t_int pf_int;
 	t_text text;
+	wchar_t uni_nul[8];
+	char null[8];
 	char specifier;
 	long data;
 	long retour;
@@ -67,11 +74,11 @@ typedef struct s_pf
 /*
 **	buffer function /////////////////////////
 */
-int ft_print_buff(t_buff *buff);
+void ft_print_buff(t_buff *buff);
 int ft_fill_buff(char *str, t_buff *buff);
 void ft_set_buff(t_buff *buff);
-int buff_set_or_print(char *for_print,t_pf *pf);
-int buff_set_or_print_char(char for_print, t_pf *pf);
+void buff_set_or_print(char *for_print,t_pf *pf);
+void buff_set_or_print_char(char for_print, t_pf *pf);
 
 /*
 **	head printf /////////////////////////////////
@@ -79,50 +86,60 @@ int buff_set_or_print_char(char for_print, t_pf *pf);
 long ft_printf(char *str, ...);
 
 /*
+**    head data
+*/
+void manage_before_printer(t_pf *pf);
+
+/*
+**    utils data
+*/
+void check_if_null_data(t_pf *pf);
+
+
+/*
 **  parseur ///////////////////////////////////
 */
 int printf_parseur(t_pf *pf);
 long get_nxt_argv(t_pf *pf);
 
-int str_manage_percent(t_pf *pf);
+int str_manage_percent(char **s,t_pf *pf);
 int str_set_flag(char **str, t_pf *pf);
 
 /*
 **  =======================  int ==========================
 */
-int manage_decimal(t_pf *pf);
-int manage_before_printer(t_pf *pf);
+void manage_decimal(t_pf *pf);
 
 /*
 **  unsigned int
 */
-int manage_unsigned(t_pf *pf);
+void manage_unsigned(t_pf *pf);
 
 /*
 **  octal style
 */
-int manage_octal(t_pf *pf);
+void manage_octal(t_pf *pf);
 
 /*
 **  hexa style
 */
-int manage_hexa(t_pf *pf);
+void manage_hexa(t_pf *pf);
 
 /*
 **  binary style
 */
-int manage_binaire(t_pf *pf);
+void manage_binaire(t_pf *pf);
 
 /*
 **  ptr style
 */
-int manage_ptr(t_pf *pf);
+void manage_ptr(t_pf *pf);
 
 /*
 **  unsigned utils
 */
 void convert_base_fill_unsigned(t_pf *pf, char *base);
-int set_lenght_unsigned(t_pf *pf);
+void set_lenght_unsigned(t_pf *pf);
 
 
 /*
@@ -135,29 +152,28 @@ size_t size_uni(wchar_t c, int precision);
 /*
 **  str style
 */
-int manage_str(t_pf *pf);
+void manage_str(t_pf *pf);
 
 /*
 **  str uni style
 */
-int manage_str_big(t_pf *pf);
+void manage_str_big(t_pf *pf);
 
 /*
 **  char style
 */
-int manage_char(t_pf *pf);
+void manage_char(t_pf *pf);
 
 /*
 **  uni char style
 */
-int manage_CHAR(t_pf *pf);
+void manage_CHAR(t_pf *pf);
 
 /*
 **  main_utils //////////////////////////////
 */
-void put_and_count(char c, t_pf *pf);
-void putstr_and_count(char *s, t_pf *pf);
 long get_star_nxt_argv(t_pf *pf);
+void	set_null_pf(t_pf *pf);
 
 /*
 **  printer

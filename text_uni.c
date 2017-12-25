@@ -7,10 +7,10 @@ void main()
 	setlocale(LC_ALL,"");
 
 	wchar_t a[10] = {0x1234,0x1234,0x1234};
-	printf("=%S=\n", a);
-	printf("=%10S=\n", a);
-	printf("=%.2S=\n", a);
-	printf("=%100 0S=\n", a);
-	printf("=%S=\n", a);
-	printf("=%S=\n", a);
+	printf("=%S=\n", NULL);
+//	printf("=%10S=\n", a);
+//	printf("=%.2S=\n", a);
+//	printf("=%100 0S=\n", a);
+//	printf("=%S=\n", a);
+//	printf("=%S=\n", a);
 }

@@ -3,7 +3,7 @@
 /*
 **  put char into buffer
 */
-int buff_set_or_print_char(char for_print, t_pf *pf)
+void buff_set_or_print_char(char for_print, t_pf *pf)
 {
 	char s[2];
 
@@ -12,7 +12,7 @@ int buff_set_or_print_char(char for_print, t_pf *pf)
 	if (ft_fill_buff(s, &pf->buff) == 0)
 	{
 		ft_print_buff(&pf->buff);
-		ft_fill_buff(for_print, &pf->buff);
+		ft_fill_buff(&for_print, &pf->buff);
 	}
 	pf->retour++;
 }
@@ -21,10 +21,10 @@ int buff_set_or_print_char(char for_print, t_pf *pf)
 /*
 **	manage buff for this project
 */
-int buff_set_or_print(char *for_print, t_pf *pf)
+void buff_set_or_print(char *for_print, t_pf *pf)
 {
 	pf->retour += ft_strlen(for_print);
-	if (ft_fill_buff(for_print, &pf->buff) == 0)
+	if (ft_fill_buff(for_print, &(pf->buff)) == 0)
 	{
 		ft_print_buff(&pf->buff);
 		ft_fill_buff(for_print, &pf->buff);
@@ -34,7 +34,7 @@ int buff_set_or_print(char *for_print, t_pf *pf)
 /*
 **	print and set buff
 */
-int ft_print_buff(t_buff *buff)
+void ft_print_buff(t_buff *buff)
 {
 	write(1, &buff->data, BUFF_SIZE - buff->remain_space);
 	ft_set_buff(buff);

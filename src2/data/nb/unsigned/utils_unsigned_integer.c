@@ -1,6 +1,6 @@
 #include "../../../pf_2.h"
 
-int set_lenght_unsigned(t_pf *pf)
+void set_lenght_unsigned(t_pf *pf)
 {
 	if (pf->op.length == 'H')
 		pf->data = (unsigned char) pf->data;

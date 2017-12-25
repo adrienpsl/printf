@@ -1,6 +1,6 @@
 #include "../../../pf_2.h"
 
-int manage_hexa(t_pf *pf)
+void manage_hexa(t_pf *pf)
 {
 	char *hexa;
 	char *HEXA;
@@ -10,6 +10,8 @@ int manage_hexa(t_pf *pf)
 
 	ft_memset(&pf->pf_int, 0, sizeof(t_int));
 	set_lenght_unsigned(pf);
+	if (pf->data == 0 && check_char_into_str("pP",pf->specifier) == FALSE)
+	    pf->op.diez = 0;
 	if (pf->specifier == 'X')
 		convert_base_fill_unsigned(pf, HEXA);
 	else
@@ -18,5 +20,4 @@ int manage_hexa(t_pf *pf)
 	pf->op.space = 0;
 	manage_before_printer(pf);
 	manage_printer(pf);
-	return (1);
 }

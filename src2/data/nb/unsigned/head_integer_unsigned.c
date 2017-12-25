@@ -1,6 +1,6 @@
 #include "../../../pf_2.h"
 
-static int fill_number_str_unsigned(unsigned long nb, t_pf *pf)
+static void fill_number_str_unsigned(unsigned long nb, t_pf *pf)
 {
 	int i;
 
@@ -16,7 +16,7 @@ static int fill_number_str_unsigned(unsigned long nb, t_pf *pf)
 	ft_str_rev(pf->pf_int.nb_s);
 }
 
-int manage_unsigned(t_pf *pf)
+void manage_unsigned(t_pf *pf)
 {
 	ft_memset(&pf->pf_int, 0, sizeof(t_int));
 	set_lenght_unsigned(pf);

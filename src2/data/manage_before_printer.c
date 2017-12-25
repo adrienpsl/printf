@@ -44,13 +44,11 @@ static void manage_length(t_pf *pf, int size)
 		pf->op.nb_space -= size;
 }
 
-size_t get_size(t_pf *pf)
+long get_size(t_pf *pf)
 {
-	size_t size;
+	long size;
 
-	if (check_char_into_str("DdiXxOoBbUuCc", pf->specifier))
-		return (ft_strlen(pf->pf_int.nb_s));
-	else if (check_char_into_str("S", pf->specifier))
+	if (check_char_into_str("S", pf->specifier))
 	{
 		size = strlen_uni(pf->text.u_out, pf->text.precision);
 		return (size);
@@ -63,13 +61,16 @@ size_t get_size(t_pf *pf)
 		else
 			return (size);
 	}
+	else
+		return (ft_strlen(pf->pf_int.nb_s));
 }
 
-int manage_before_printer(t_pf *pf)
+void manage_before_printer(t_pf *pf)
 {
-	size_t size_nb;
+	long size_nb;
 
-	if (pf->specifier != 's' && (pf->op.dot || pf->op.left))
+	check_if_null_data(pf);
+	if (pf->op.dot || pf->op.left)
 		pf->op.zero = 0;
 	size_nb = get_size(pf);
 	manage_first_char(pf);

@@ -1,6 +1,6 @@
 #include "../../../pf_2.h"
 
-int manage_char(t_pf *pf)
+void manage_char(t_pf *pf)
 {
 	if (pf->op.length == 'l' || pf->op.length == 'L')
 		return manage_CHAR(pf);
@@ -11,10 +11,9 @@ int manage_char(t_pf *pf)
 	pf->op.dot = 0;
 	manage_before_printer(pf);
 	manage_printer(pf);
-	return (1);
 }
 
-int manage_CHAR(t_pf *pf)
+void manage_CHAR(t_pf *pf)
 {
 	ft_memset(&pf->pf_int, 0, sizeof(t_int));
 	put_uni_into_tab(pf->data, pf->pf_int.nb_s, 4);
