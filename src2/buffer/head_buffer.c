@@ -17,13 +17,13 @@ void buff_set_or_print_char(char for_print, t_pf *pf)
 	pf->retour++;
 }
 
-
 /*
 **	manage buff for this project
 */
 void buff_set_or_print(char *for_print, t_pf *pf)
 {
-	pf->retour += ft_strlen(for_print);
+	if (pf->op.color == 0)
+		pf->retour += ft_strlen(for_print);
 	if (ft_fill_buff(for_print, &(pf->buff)) == 0)
 	{
 		ft_print_buff(&pf->buff);

@@ -46,6 +46,8 @@ typedef struct s_op
 	long nb_dot;
 	long nb_space;
 	char length;
+	char color;
+	char maj;
 	uint8_t zero:1;
 	uint8_t dot:1;
 	uint8_t diez:1;
@@ -97,13 +99,19 @@ void check_if_null_data(t_pf *pf);
 
 
 /*
-**  parseur ///////////////////////////////////
+** 	======= parseur ============================================================
 */
 int printf_parseur(t_pf *pf);
 int str_set_flag(t_pf *pf);
 
 /*
-**  =======================  int ==========================
+**    utils
+*/
+int get_maj(t_pf *pf);
+int get_color(t_pf *pf);
+
+/*
+**  -------- int --------------------------------
 */
 void manage_decimal(t_pf *pf);
 
@@ -184,6 +192,11 @@ void manage_printer(t_pf *pf);
 void printer_space(t_pf *pf);
 void printer_precision(t_pf *pf);
 void printer_value(t_pf *pf);
+
+/*
+**    utils printer
+*/
+void put_color(t_pf *pf);
 
 
 void set_op_zero(t_op *o);

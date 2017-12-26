@@ -49,3 +49,16 @@ size_t strlen_uni(wchar_t *s, int precision)
 	}
 	return (size);
 }
+
+void put_color(t_pf *pf)
+{
+	if (pf->op.color == 'R')
+		buff_set_or_print("\033[31m",pf);
+	else if (pf->op.color == 'N')
+		buff_set_or_print("\033[32m",pf);
+	else if (pf->op.color == 'Y')
+		buff_set_or_print("\033[33m",pf);
+	else if (pf->op.color == 'B')
+		buff_set_or_print("\033[36m",pf);
+	pf->op.color = 0;
+}

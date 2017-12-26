@@ -29,8 +29,10 @@ void print_by_right(t_pf *pf)
 
 void manage_printer(t_pf *pf)
 {
+	put_color(pf);
 	if (pf->op.left)
 		print_by_left(pf);
 	else
 		print_by_right(pf);
+	buff_set_or_print("\033[0m",pf);
 }

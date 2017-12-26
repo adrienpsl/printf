@@ -36,9 +36,9 @@ int str_set_flag(t_pf *pf)
 	if (**pf->s == '0')
 		pf->op.zero = 1;
 	else if (**pf->s == '.')
-		return manage_dot(pf->s, pf);
+		return (manage_dot(pf->s, pf));
 	else if (ft_isdigit(**pf->s))
-		return manage_digit(pf->s, &pf->op);
+		return (manage_digit(pf->s, &pf->op));
 	else if (**pf->s == '*')
 		pf->op.nb_space = get_star_nxt_argv(pf);
 	else if (**pf->s == '#')
@@ -49,6 +49,10 @@ int str_set_flag(t_pf *pf)
 		pf->op.left = 1;
 	else if (**pf->s == ' ')
 		pf->op.space = 1;
+	else if (**pf->s == '&')
+		return (get_color(pf));
+	else if (**pf->s == '!')
+		return (get_maj(pf));
 	else
 		return (FALSE);
 	(*pf->s)++;

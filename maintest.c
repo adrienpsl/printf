@@ -32,25 +32,29 @@ int main()
 	double b;
 	b = 1.15;
 
-	float_cast d1 = { .f = .1};
-	double_cast d2 = {.d = .1};
-	ft_printf("sign = %x\n", d1.parts.sign);
-	ft_printf("sign = %x\n", d2.parts.sign);
+//	float_cast d1 = { .f = .1};
+//	double_cast d2 = {.d = .1};
+//	ft_printf("sign = %x\n", d1.parts.sign);
+//	ft_printf("sign = %x\n", d2.parts.sign);
+//
+//	ft_printf("exponent = %b\n", d1.parts.exponent);
+//	ft_printf("exponent = %b\n", d2.parts.exponent);
+//
+//	ft_printf("mantisa = %b\n", d1.parts.mantisa);
+//	ft_printf("mantisa = %b\n", d2.parts.mantisa);
+////	printf()
+//	printf("%.15f\n",d1.f);
+//	printf("%.15f\n",d2.d);
+//
+//
+//
+//	printf("sign = %x\n", d1.parts.sign);
+//	printf("exponent = %x\n", d1.parts.exponent);
+//	printf("mantisa = %x\n", d1.parts.mantisa);
 
-	ft_printf("exponent = %b\n", d1.parts.exponent);
-	ft_printf("exponent = %b\n", d2.parts.exponent);
 
-	ft_printf("mantisa = %b\n", d1.parts.mantisa);
-	ft_printf("mantisa = %b\n", d2.parts.mantisa);
-//	printf()
-	printf("%.15f\n",d1.f);
-	printf("%.15f\n",d2.d);
-
-
-
-	printf("sign = %x\n", d1.parts.sign);
-	printf("exponent = %x\n", d1.parts.exponent);
-	printf("mantisa = %x\n", d1.parts.mantisa);
+//	printf("\033[31m");
+	ft_printf("ddfsd %&Rs sdff\n", "sdfsdf");
 
 	/*char		c;
 	int		*n;
