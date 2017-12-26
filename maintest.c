@@ -2,15 +2,55 @@
 
 #include "src2/pf_2.h"
 
+typedef union {
+	float f;
+	struct {
+		unsigned int mantisa : 23;
+		unsigned int exponent : 8;
+		unsigned int sign : 1;
+	} parts;
+} float_cast;
+
+
+typedef union {
+	double d;
+	struct {
+		uint64_t mantisa : 52;
+		uint64_t exponent : 11;
+		uint64_t sign : 1;
+	} parts;
+} double_cast;
 int main()
 {
 
 	int n;
-	ft_printf("%s: %nFoo\n", "hello", &n);
-	ft_printf("%*sBar\n", n, "");
+//	ft_printf("%s: %nFoo\n", "hello", &n);
+//	ft_printf("%*sBar\n", n, "");
+	float  a;
+	a = 1.15;
 
-	//	printf("%s: %nFoo\n", "hello", &n);
-	//	printf("%*sBar\n", n, "");
+	double b;
+	b = 1.15;
+
+	float_cast d1 = { .f = .1};
+	double_cast d2 = {.d = .1};
+	ft_printf("sign = %x\n", d1.parts.sign);
+	ft_printf("sign = %x\n", d2.parts.sign);
+
+	ft_printf("exponent = %b\n", d1.parts.exponent);
+	ft_printf("exponent = %b\n", d2.parts.exponent);
+
+	ft_printf("mantisa = %b\n", d1.parts.mantisa);
+	ft_printf("mantisa = %b\n", d2.parts.mantisa);
+//	printf()
+	printf("%.15f\n",d1.f);
+	printf("%.15f\n",d2.d);
+
+
+
+	printf("sign = %x\n", d1.parts.sign);
+	printf("exponent = %x\n", d1.parts.exponent);
+	printf("mantisa = %x\n", d1.parts.mantisa);
 
 	/*char		c;
 	int		*n;
