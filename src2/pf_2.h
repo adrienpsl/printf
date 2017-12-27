@@ -19,6 +19,15 @@ void deb(char *str);
 #define FALSE 0
 #define BUFF_SIZE 40952
 
+typedef union {
+	double d;
+	struct {
+		uint64_t mantisa : 52;
+		uint64_t exponent : 11;
+		uint64_t sign : 1;
+	} parts;
+} u_double ;
+
 
 typedef struct s_buff
 {
@@ -67,7 +76,7 @@ typedef struct s_pf
 	wchar_t uni_nul[8];
 	char null[8];
 	char specifier;
-	long data;
+	uint64_t data;
 	long retour;
 	va_list *ap;
 	char **s;
@@ -146,6 +155,11 @@ void manage_ptr(t_pf *pf);
 void convert_base_fill_unsigned(t_pf *pf, char *base);
 void set_lenght_unsigned(t_pf *pf);
 
+
+/*
+**    manage double
+*/
+void manage_float(t_pf *pf);
 
 /*
 **  ================= text =======================

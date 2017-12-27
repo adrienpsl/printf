@@ -23,9 +23,11 @@ void send_to_good_manager(t_pf *pf)
 	if (check_char_into_str("Pp", pf->specifier))
 		return manage_ptr(pf);
 	if (check_char_into_str("%", pf->specifier))
-		buff_set_or_print_char('%',pf);
+		buff_set_or_print_char('%', pf);
 	if (check_char_into_str("n", pf->specifier))
 		return manage_n(pf);
+	if (check_char_into_str("f", pf->specifier))
+		return manage_float(pf);
 }
 
 long ft_printf(char *str, ...)
@@ -40,7 +42,10 @@ long ft_printf(char *str, ...)
 	ft_set_buff(&pf.buff);
 	while (printf_parseur(&pf))
 	{
-		pf.data = va_arg(ap, long);
+		if (pf.specifier == 'f')
+			pf.data = va_arg(ap, float);
+		else
+			pf.data = va_arg(ap, long);
 		send_to_good_manager(&pf);
 	}
 	va_end(ap);

@@ -24,7 +24,7 @@ static int get_length_nxt(t_pf *pf)
 
 static int get_specifier(t_pf *pf)
 {
-	if (check_char_into_str("DdiOoUuxXcCsSpP%BbnN", **pf->s))
+	if (check_char_into_str("DdiOoUuxXcCsSpP%BbnNf", **pf->s))
 	{
 		pf->specifier = **pf->s;
 		(*pf->s)++;
