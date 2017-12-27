@@ -22,7 +22,7 @@ void buff_set_or_print_char(char for_print, t_pf *pf)
 */
 void buff_set_or_print(char *for_print, t_pf *pf)
 {
-	if (pf->op.color == 0)
+	if (pf->op.color == 0 && pf->op.police == 0)
 		pf->retour += ft_strlen(for_print);
 	if (ft_fill_buff(for_print, &(pf->buff)) == 0)
 	{

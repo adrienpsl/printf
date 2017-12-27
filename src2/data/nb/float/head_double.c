@@ -2,11 +2,6 @@
 // une fonction qui convertie en nb les nombr que je get, ou en float ??
 
 
-
-
-
-
-
 // la fonction head
 void manage_float(t_pf *pf)
 {

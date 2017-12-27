@@ -11,7 +11,7 @@ int get_color(t_pf *pf)
 int get_maj(t_pf *pf)
 {
 	(*pf->s)++;
-	pf->op.maj = **pf->s;
+	pf->op.police = **pf->s;
 	(*pf->s)++;
 	return (1);
 }

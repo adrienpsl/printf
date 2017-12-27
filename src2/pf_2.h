@@ -56,7 +56,7 @@ typedef struct s_op
 	long nb_space;
 	char length;
 	char color;
-	char maj;
+	char police;
 	uint8_t zero:1;
 	uint8_t dot:1;
 	uint8_t diez:1;
@@ -211,9 +211,5 @@ void printer_value(t_pf *pf);
 **    utils printer
 */
 void put_color(t_pf *pf);
-
-
-void set_op_zero(t_op *o);
-
 
 #endif //PRINTF_PF_2_H

@@ -60,5 +60,10 @@ void put_color(t_pf *pf)
 		buff_set_or_print("\033[33m",pf);
 	else if (pf->op.color == 'B')
 		buff_set_or_print("\033[36m",pf);
+	if (pf->op.police == 'C')
+		buff_set_or_print("\033[5m",pf);
+	else if (pf->op.police == 'L')
+		buff_set_or_print("\033[1m]",pf);
+	pf->op.police = 0;
 	pf->op.color = 0;
 }
