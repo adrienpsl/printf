@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_char_into_str.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adpusel <adpusel@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/19 10:48:07 by adpusel           #+#    #+#             */
+/*   Updated: 2017/11/16 12:45:49 by adpusel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pf_2.h"
 
-void put_uni_into_tab(int c, char *tab, int precision)
+void		put_uni_into_tab(int c, char *tab, int precision)
 {
 	if (c <= 126 && precision > 0)
 		tab[0] = c;
@@ -24,7 +36,7 @@ void put_uni_into_tab(int c, char *tab, int precision)
 	}
 }
 
-size_t size_uni(int c, int precision)
+size_t		size_uni(int c, int precision)
 {
 	if (c <= 126 && precision > 0)
 		return (1);
@@ -37,7 +49,7 @@ size_t size_uni(int c, int precision)
 	return (0);
 }
 
-size_t strlen_uni(wchar_t *s, int precision)
+size_t		strlen_uni(wchar_t *s, int precision)
 {
 	size_t size;
 
@@ -50,7 +62,7 @@ size_t strlen_uni(wchar_t *s, int precision)
 	return (size);
 }
 
-void put_color(t_pf *pf)
+void		put_color(t_pf *pf)
 {
 	if (pf->op.color == 'R')
 		buff_set_or_print("\033[31m", pf);

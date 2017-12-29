@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_char_into_str.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adpusel <adpusel@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/19 10:48:07 by adpusel           #+#    #+#             */
+/*   Updated: 2017/11/16 12:45:49 by adpusel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../pf_2.h"
 
-void printer_space(t_pf *pf)
+void		printer_space(t_pf *pf)
 {
 	if (pf->op.zero)
 	{
@@ -19,7 +30,7 @@ void printer_space(t_pf *pf)
 		}
 }
 
-void printer_precision(t_pf *pf)
+void		printer_precision(t_pf *pf)
 {
 	while (pf->op.nb_dot > 0)
 	{
@@ -31,7 +42,7 @@ void printer_precision(t_pf *pf)
 /*
 **  if the specifier is string
 */
-void manage_buff_and_s(t_pf *pf)
+void		manage_buff_and_s(t_pf *pf)
 {
 	if (pf->op.dot)
 	{
@@ -49,14 +60,14 @@ void manage_buff_and_s(t_pf *pf)
 /*
 **  if the specifier is STRING
 */
-void manage_buff_and_sbig(t_pf *pf)
+void		manage_buff_and_sbig(t_pf *pf)
 {
 	char tmp[5];
 
 	while (*pf->text.u_out)
 	{
 		ft_memset(&tmp, 0, 5);
-		if(pf->op.dot)
+		if (pf->op.dot)
 			pf->text.precision -= size_uni(*pf->text.u_out, 5);
 		put_uni_into_tab(*pf->text.u_out, tmp, 4);
 		if (pf->text.precision >= 0)
@@ -68,7 +79,7 @@ void manage_buff_and_sbig(t_pf *pf)
 /*
 **	dispatch between specifier s / S / other
 */
-void printer_value(t_pf *pf)
+void		printer_value(t_pf *pf)
 {
 	if (check_char_into_str("s", pf->specifier))
 		manage_buff_and_s(pf);

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_char_into_str.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adpusel <adpusel@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/19 10:48:07 by adpusel           #+#    #+#             */
+/*   Updated: 2017/11/16 12:45:49 by adpusel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pf_2.h"
 
-static int get_length_nxt(t_pf *pf)
+static int	get_length_nxt(t_pf *pf)
 {
 	if (**pf->s == 'j' || (**pf->s == 'j' && pf->op.length == 'j'))
 		pf->op.length = 'j';
@@ -22,7 +34,7 @@ static int get_length_nxt(t_pf *pf)
 	return (1);
 }
 
-static int get_specifier(t_pf *pf)
+static int	get_specifier(t_pf *pf)
 {
 	if (check_char_into_str("DdiOoUuxXcCsSpP%BbnNf", **pf->s))
 	{
@@ -33,7 +45,7 @@ static int get_specifier(t_pf *pf)
 	return (0);
 }
 
-int str_manage_percent(t_pf *pf)
+int			str_manage_percent(t_pf *pf)
 {
 	while (**pf->s != END)
 	{
@@ -50,7 +62,7 @@ int str_manage_percent(t_pf *pf)
 	return (FALSE);
 }
 
-int printf_parseur(t_pf *pf)
+int			printf_parseur(t_pf *pf)
 {
 	while (**pf->s != END)
 	{

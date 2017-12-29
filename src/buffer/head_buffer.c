@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_char_into_str.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adpusel <adpusel@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/19 10:48:07 by adpusel           #+#    #+#             */
+/*   Updated: 2017/11/16 12:45:49 by adpusel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pf_2.h"
 
 /*
-**  put char into buffer
+**	put char into buffer
 */
-void buff_set_or_print_char(char for_print, t_pf *pf)
+void	buff_set_or_print_char(char for_print, t_pf *pf)
 {
 	char s[2];
 
@@ -20,7 +32,7 @@ void buff_set_or_print_char(char for_print, t_pf *pf)
 /*
 **	manage buff for this project
 */
-void buff_set_or_print(char *for_print, t_pf *pf)
+void	buff_set_or_print(char *for_print, t_pf *pf)
 {
 	if (ft_strchr(for_print, '\033') == FALSE)
 		pf->retour += ft_strlen(for_print);
@@ -34,7 +46,7 @@ void buff_set_or_print(char *for_print, t_pf *pf)
 /*
 **	print and set buff
 */
-void ft_print_buff(t_buff *buff)
+void	ft_print_buff(t_buff *buff)
 {
 	if (BUFF_SIZE > buff->remain_space)
 		write(1, &buff->data, BUFF_SIZE - buff->remain_space);
@@ -45,7 +57,7 @@ void ft_print_buff(t_buff *buff)
 **	fill the buff with str, update buff and return 1
 **	if str didn't fit, return 0
 */
-int ft_fill_buff(char *str, t_buff *buff)
+int		ft_fill_buff(char *str, t_buff *buff)
 {
 	size_t size_str;
 
@@ -63,7 +75,7 @@ int ft_fill_buff(char *str, t_buff *buff)
 /*
 **	set the buffer with the value of BUFF_SIZE
 */
-void ft_set_buff(t_buff *buff)
+void	ft_set_buff(t_buff *buff)
 {
 	ft_memset(&buff->data, 0, BUFF_SIZE);
 	buff->remain_space = BUFF_SIZE;

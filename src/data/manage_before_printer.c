@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_char_into_str.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adpusel <adpusel@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/19 10:48:07 by adpusel           #+#    #+#             */
+/*   Updated: 2017/11/16 12:45:49 by adpusel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pf_2.h"
 
-static void manage_first_char(t_pf *pf)
+static void		manage_first_char(t_pf *pf)
 {
 	if (check_char_into_str("UuCcSs", pf->specifier))
 	{
 		pf->pf_int.first_char[0] = 0;
-		return;
+		return ;
 	}
 	if (pf->pf_int.neg)
 		pf->pf_int.first_char[0] = '-';
@@ -24,14 +36,14 @@ static void manage_first_char(t_pf *pf)
 	}
 }
 
-static void manage_precision(t_pf *pf, int size)
+static void		manage_precision(t_pf *pf, int size)
 {
 	pf->op.nb_dot -= size;
 	if (pf->op.nb_dot < 0)
 		pf->op.nb_dot = 0;
 }
 
-static void manage_length(t_pf *pf, int size)
+static void		manage_length(t_pf *pf, int size)
 {
 	if (pf->pf_int.first_char[0])
 		pf->op.nb_space -= ft_strlen(pf->pf_int.first_char);
@@ -43,7 +55,7 @@ static void manage_length(t_pf *pf, int size)
 			else
 				pf->op.nb_space -= size;
 		}
-			else if (pf->specifier == 'S')
+		else if (pf->specifier == 'S')
 		{
 			if (pf->text.precision < size)
 				pf->op.nb_space -= pf->text.precision;
@@ -58,7 +70,7 @@ static void manage_length(t_pf *pf, int size)
 		pf->op.nb_space -= size;
 }
 
-long get_size(t_pf *pf)
+long			get_size(t_pf *pf)
 {
 	long size;
 
@@ -79,7 +91,7 @@ long get_size(t_pf *pf)
 		return (ft_strlen(pf->pf_int.nb_s));
 }
 
-void manage_before_printer(t_pf *pf)
+void			manage_before_printer(t_pf *pf)
 {
 	long size_nb;
 

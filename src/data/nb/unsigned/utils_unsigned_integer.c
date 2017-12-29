@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_char_into_str.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adpusel <adpusel@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/19 10:48:07 by adpusel           #+#    #+#             */
+/*   Updated: 2017/11/16 12:45:49 by adpusel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../../pf_2.h"
 
-void set_lenght_unsigned(t_pf *pf)
+void	set_lenght_unsigned(t_pf *pf)
 {
 	if (pf->op.length == 'H')
 		pf->data = (unsigned char) pf->data;
@@ -18,8 +30,7 @@ void set_lenght_unsigned(t_pf *pf)
 		pf->data = (unsigned int)pf->data;
 }
 
-
-void convert_base_fill_unsigned(t_pf *pf, char *base)
+void	convert_base_fill_unsigned(t_pf *pf, char *base)
 {
 	int length_b;
 	int i;
@@ -36,6 +47,3 @@ void convert_base_fill_unsigned(t_pf *pf, char *base)
 	}
 	ft_str_rev(pf->pf_int.nb_s);
 }
-
-// 0.	0 0 0 1  1  1  0   1   1   0    	0  		1		1 		0 		0		1		1		 0		0		1	   		1			0		 	1	 	0
-//   	2 4 6 8  16 32 64  128 256 512     1024 	2048	4096	8192	16384   32768	65536	131072	262144	524288	1048576		2097152		4194304 	8388608	16777216

@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_char_into_str.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adpusel <adpusel@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/19 10:48:07 by adpusel           #+#    #+#             */
+/*   Updated: 2017/11/16 12:45:49 by adpusel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../pf_2.h"
 
-static void clean_str(char **s)
+static void		clean_str(char **s)
 {
 	if (**s == '.')
 		(*s)++;
@@ -13,13 +24,13 @@ static void clean_str(char **s)
 	}
 }
 
-static int manage_dot(char **str, t_pf *pf)
+static int		manage_dot(char **str, t_pf *pf)
 {
 	pf->op.dot = 1;
 	if (*((*str) + 1) == '*')
 	{
 		pf->op.nb_dot = get_star_nxt_argv2(pf);
-		if(pf->op.nb_dot < 0)
+		if (pf->op.nb_dot < 0)
 		{
 			pf->op.dot = 0;
 			pf->op.nb_dot = 0;
@@ -31,22 +42,21 @@ static int manage_dot(char **str, t_pf *pf)
 	return (TRUE);
 }
 
-static int manage_digit(char **str, t_op *option)
+static int		manage_digit(char **str, t_op *option)
 {
 	option->nb_space = ft_atoi(*str);
 	clean_str(str);
 	return (TRUE);
 }
 
-
-static int manage_fuckparseur(t_pf *pf)
+static int		manage_fuckparseur(t_pf *pf)
 {
 	pf->specifier = **pf->s;
 	(*pf->s)++;
 	return (FALSE);
 }
 
-int str_set_flag(t_pf *pf)
+int				str_set_flag(t_pf *pf)
 {
 	if (**pf->s == '0')
 		pf->op.zero = 1;

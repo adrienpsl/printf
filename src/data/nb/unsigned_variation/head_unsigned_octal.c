@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_char_into_str.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adpusel <adpusel@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/19 10:48:07 by adpusel           #+#    #+#             */
+/*   Updated: 2017/11/16 12:45:49 by adpusel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../../pf_2.h"
 
 void manage_octal(t_pf *pf)
@@ -16,8 +28,6 @@ void manage_octal(t_pf *pf)
 		pf->pf_int.nb_s[0] = '0';
 		pf->op.diez = 0;
 	}
-//	else if (pf->data == 0 && pf->op.dot && !pf->op.nb_dot)
-//		pf->op.diez = 0;
 	pf->op.plus = 0;
 	pf->op.space = 0;
 	if(pf->op.diez && pf->op.dot && pf->op.nb_dot)

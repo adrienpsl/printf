@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_char_into_str.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adpusel <adpusel@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/10/19 10:48:07 by adpusel           #+#    #+#             */
+/*   Updated: 2017/11/16 12:45:49 by adpusel          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../pf_2.h"
 
-int manage_neg_star(int nb, t_pf *pf)
+int		manage_neg_star(int nb, t_pf *pf)
 {
 	(void)pf;
 	if (nb < 0)
@@ -10,16 +22,12 @@ int manage_neg_star(int nb, t_pf *pf)
 	}
 	return (nb);
 }
-long get_star_nxt_argv(t_pf *pf)
+long	get_star_nxt_argv(t_pf *pf)
 {
 	return (manage_neg_star(va_arg(*pf->ap, int), pf));
 }
 
-long get_star_nxt_argv2(t_pf *pf)
+long	get_star_nxt_argv2(t_pf *pf)
 {
-//	int a;
-//
-//	a = va_arg(*pf->ap, int);
-//	return (a < 0 ? 0 : a);
 	return (va_arg(*pf->ap, int));
 }

@@ -10,20 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pf_2.h"
+#include "../../../pf_2.h"
 
-int	get_color(t_pf *pf)
+void	manage_char(t_pf *pf)
 {
-	(*pf->s)++;
-	pf->op.color = **pf->s;
-	(*pf->s)++;
-	return (1);
+	if (pf->op.length == 'l' || pf->op.length == 'L')
+		return manage_CHAR(pf);
+	ft_memset(&pf->pf_int, 0, sizeof(t_int));
+	pf->data = (unsigned char)pf->data;
+	if (pf->data)
+		pf->pf_int.nb_s[0] = pf->data;
+	else
+	{
+		pf->op.putain_de_char = 1;
+		pf->pf_int.nb_s[0] = 'a';
+	}
+	pf->op.nb_dot = 0;
+	pf->op.dot = 0;
+	manage_before_printer(pf);
+	manage_printer(pf);
 }
 
-int	get_maj(t_pf *pf)
+void	manage_CHAR(t_pf *pf)
 {
-	(*pf->s)++;
-	pf->op.police = **pf->s;
-	(*pf->s)++;
-	return (1);
+	ft_memset(&pf->pf_int, 0, sizeof(t_int));
+	if (pf->data)
+		put_uni_into_tab(pf->data, pf->pf_int.nb_s, 4);
+	else
+	{
+		pf->op.putain_de_char = 1;
+		pf->pf_int.nb_s[0] = 'a';
+		pf->specifier = 'c';
+	}
+	pf->op.nb_dot = 0;
+	pf->op.dot = 0;
+	manage_before_printer(pf);
+	manage_printer(pf);
 }
