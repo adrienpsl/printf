@@ -11,17 +11,17 @@ add_executable(printf
 
 
         #       second attent
-        src2/data/nb/integer/head_integer_signed.c
+        src/data/nb/integer/head_integer_signed.c
 
         #       parseur
 
         #        buffer
-        src2/main_pfff.c src2/pf_2.h src2/buffer/head_buffer.c
+        src/main_pfff.c src/pf_2.h src/buffer/head_buffer.c
 
 
         #        main
 #        main.c
         maintest.c
 
-        src2/parseur/head_parseur.c src2/parseur/parseur_utils.c src2/parseur/parseur_flag.c maintest_1.0.c src2/data/manage_before_printer.c src2/printer/head_printer.c src2/utils_main.c src2/printer/function_printer.c src2/data/nb/unsigned/head_integer_unsigned.c src2/data/nb/unsigned/utils_unsigned_integer.c src2/data/nb/unsigned_variation/head_unsigned_octal.c src2/data/nb/unsigned_variation/head_unsigned_hexa.c src2/data/nb/unsigned_variation/head_unsigned_binairy.c src2/data/text/char/head_char_CHAR.c src2/printer/utils_printer.c src2/data/text/str/manage_str.c src2/data/nb/unsigned_variation/head_unsigned_ptr.c src2/data/utils_data.c src2/data/nb/integer/head_interger_n.c src2/parseur/parseur_flag_utils.c src2/data/nb/float/head_double.c)
+        src/parseur/head_parseur.c src/parseur/parseur_utils.c src/parseur/parseur_flag.c src/data/manage_before_printer.c src/printer/head_printer.c src/utils_main.c src/printer/function_printer.c src/data/nb/unsigned/head_integer_unsigned.c src/data/nb/unsigned/utils_unsigned_integer.c src/data/nb/unsigned_variation/head_unsigned_octal.c src/data/nb/unsigned_variation/head_unsigned_hexa.c src/data/nb/unsigned_variation/head_unsigned_binairy.c src/data/text/char/head_char_CHAR.c src/printer/utils_printer.c src/data/text/str/manage_str.c src/data/nb/unsigned_variation/head_unsigned_ptr.c src/data/nb/integer/head_interger_n.c src/parseur/parseur_flag_utils.c src/data/nb/float/head_double.c src/data/text/other/head_percent.c)
 target_link_libraries(printf ${CMAKE_SOURCE_DIR}/libft/libft.a)

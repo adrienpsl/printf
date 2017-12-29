@@ -1,10 +1,12 @@
 
 
-#include "src2/pf_2.h"
+#include "src/pf_2.h"
 
-typedef union {
+typedef union
+{
 	float f;
-	struct {
+	struct
+	{
 		unsigned int mantisa : 23;
 		unsigned int exponent : 8;
 		unsigned int sign : 1;
@@ -14,37 +16,19 @@ typedef union {
 int main()
 {
 
-	int n;
-	float  a;
-	a = 1.15;
-
-	double b;
-	b = 0.15625;
-
-	float_cast d1 = { .f = 0.15625};
-	u_double d2 = {.d = b};
-//	ft_printf("sign = %x\n", d1.parts.sign);
-//	ft_printf("sign = %x\n", d2.parts.sign);
+//	printf("eux {%05.%}", 0);
+//	printf(" \n");
+//	ft_printf("moi {%05.%}", 0);
 //
-	ft_printf("exponent = %!Cb\n", d1.parts.exponent);
-	ft_printf("exponent = %b\n", d2.parts.exponent);
-//
-	ft_printf("mantisa = %b\n", d1.parts.mantisa);
-	ft_printf("mantisa = %b\n", d2.parts.mantisa);
+//	printf("{%05.Z}", 0);
+//	ft_printf("{%05.Z}", 0);
 
-	//	printf("%.15f\n",d1.f);
-//	printf("%.15f\n",d2.d);
-//
-//
-//
-//	printf("sign = %x\n", d1.parts.sign);
-//	printf("exponent = %x\n", d1.parts.exponent);
-//	printf("mantisa = %x\n", d1.parts.mantisa);
-
-
-//	printf("\033[31m");
-//	ft_printf("ddfsd %&Rs sdff\n", "sdfsdf");
-ft_printf("%f",d1.f);
+//	printf("{%05.S}", L"42 c est cool");
+//	ft_printf("{%05.S}", L"42 c est cool");
+//	int a;
+	ft_printf("[[%15.4S]]", L"我是一只猫。");
+	//	ft_printf("%s: %nFoo\n", "hello", &n);
+	//	ft_printf("%*sBar\n", n, "");
 	/*char		c;
 	int		*n;
 	char	*str = NULL;
